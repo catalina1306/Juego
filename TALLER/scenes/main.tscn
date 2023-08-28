@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq7bidll0hf46"]
+
+[ext_resource type="PackedScene" uid="uid://drymbm16vofql" path="res://scenes/floor.tscn" id="1_l72md"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_l72md")]
+position = Vector2(512, 385)
+
+[node name="Floor2" parent="." instance=ExtResource("1_l72md")]
+position = Vector2(647, 407)
+
+[node name="Floor3" parent="." instance=ExtResource("1_l72md")]
+position = Vector2(742, 317)
+
+[node name="Floor4" parent="." instance=ExtResource("1_l72md")]
+position = Vector2(925, 343)
