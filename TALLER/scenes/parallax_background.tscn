@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://6ignnfvx3gva"]
+
+[ext_resource type="Script" path="res://scenes/script/parallax_background.gd" id="1_1kk15"]
+[ext_resource type="Texture2D" uid="uid://bqf4v4kqv3rtx" path="res://resources/Layers/1.png" id="2_5ejej"]
+[ext_resource type="Texture2D" uid="uid://wro81eanvm2d" path="res://resources/Layers/2.png" id="3_oo85f"]
+[ext_resource type="Texture2D" uid="uid://xohf5nx5wyvj" path="res://resources/Layers/3.png" id="4_6d350"]
+[ext_resource type="Texture2D" uid="uid://ctgons647mvle" path="res://resources/Layers/4.png" id="5_7u1ti"]
+[ext_resource type="Texture2D" uid="uid://311xycgdkr2y" path="res://resources/Layers/5.png" id="6_r2ob4"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_1kk15")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D6" type="Sprite2D" parent="ParallaxLayer4"]
+texture_repeat = 3
+position = Vector2(4548, 105)
+scale = Vector2(1.01067, 1.096)
+texture = ExtResource("2_5ejej")
+region_enabled = true
+region_rect = Rect2(0, 0, 9000, 1000)
+
+[node name="Sprite2D7" type="Sprite2D" parent="ParallaxLayer4"]
+texture_repeat = 3
+scale = Vector2(2, 2)
+texture = ExtResource("3_oo85f")
+centered = false
+region_rect = Rect2(0, 0, 9000, 1000)
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer8"]
+texture_repeat = 3
+scale = Vector2(2, 2)
+texture = ExtResource("4_6d350")
+centered = false
+region_rect = Rect2(0, 0, 9000, 1000)
+
+[node name="ParallaxLayer12" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxLayer12"]
+texture_repeat = 3
+scale = Vector2(2, 2)
+texture = ExtResource("5_7u1ti")
+centered = false
+region_rect = Rect2(0, 0, 9000, 1000)
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxLayer12"]
+texture_repeat = 3
+scale = Vector2(2, 2)
+texture = ExtResource("6_r2ob4")
+centered = false
+region_rect = Rect2(0, 0, 9000, 1000)
