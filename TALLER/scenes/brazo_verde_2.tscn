@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://b742rqp6hc860"]
 
-[ext_resource type="Script" path="res://Scenes/brazo_verde2.gd" id="1_fencf"]
-[ext_resource type="Texture2D" uid="uid://bbvagqqk06mjc" path="res://Assets/Personaje/brazoverde.png" id="2_qrhmj"]
+[ext_resource type="Script" path="res://Scripts/brazo_verde2.gd" id="1_fencf"]
+[ext_resource type="Texture2D" uid="uid://bbvagqqk06mjc" path="res://resources/players/brazoverde.png" id="2_qrhmj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_im2jj"]
 atlas = ExtResource("2_qrhmj")

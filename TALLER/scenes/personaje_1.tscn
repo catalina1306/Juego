@@ -1,13 +1,13 @@
 [gd_scene load_steps=62 format=3 uid="uid://c1b74tacnbdvd"]
 
-[ext_resource type="Texture2D" uid="uid://b75ynfma7cwhi" path="res://resources/players/Character Idle 48x48.png" id="1_67hw2"]
-[ext_resource type="PackedScene" uid="uid://b742rqp6hc860" path="res://scenes/brazo_verde_2.tscn" id="1_i5cq7"]
-[ext_resource type="Texture2D" uid="uid://q6d2cwuuqt4y" path="res://resources/players/idle-verde.png" id="2_7ie5o"]
-[ext_resource type="Texture2D" uid="uid://dc18m4ikxtcyk" path="res://resources/players/player jump 48x48.png" id="3_y6fnm"]
-[ext_resource type="Texture2D" uid="uid://be35vjirsxef2" path="res://resources/players/jump-verde.png" id="4_ioqfr"]
-[ext_resource type="Texture2D" uid="uid://0v3lhj57jr38" path="res://resources/players/lanzamientobrazo.png" id="5_dgs86"]
-[ext_resource type="Texture2D" uid="uid://ba5lkdbkbdhhi" path="res://resources/players/run cycle 48x48.png" id="6_g50wg"]
-[ext_resource type="Texture2D" uid="uid://jhendr4bbs0d" path="res://resources/players/run-verde.png" id="7_l0uww"]
+[ext_resource type="Texture2D" uid="uid://b75ynfma7cwhi" path="res://Assets/Personaje/Character Idle 48x48.png" id="1_67hw2"]
+[ext_resource type="PackedScene" uid="uid://b742rqp6hc860" path="res://Scenes/brazo_verde_2.tscn" id="1_i5cq7"]
+[ext_resource type="Texture2D" uid="uid://q6d2cwuuqt4y" path="res://Assets/Personaje/idle-verde.png" id="2_7ie5o"]
+[ext_resource type="Texture2D" uid="uid://dc18m4ikxtcyk" path="res://Assets/Personaje/player jump 48x48.png" id="3_y6fnm"]
+[ext_resource type="Texture2D" uid="uid://be35vjirsxef2" path="res://Assets/Personaje/jump-verde.png" id="4_ioqfr"]
+[ext_resource type="Texture2D" uid="uid://0v3lhj57jr38" path="res://Assets/Personaje/lanzamientobrazo.png" id="5_dgs86"]
+[ext_resource type="Texture2D" uid="uid://ba5lkdbkbdhhi" path="res://Assets/Personaje/run cycle 48x48.png" id="6_g50wg"]
+[ext_resource type="Texture2D" uid="uid://jhendr4bbs0d" path="res://Assets/Personaje/run-verde.png" id="7_l0uww"]
 
 [sub_resource type="GDScript" id="GDScript_4p4kc"]
 script/source = "extends CharacterBody2D
