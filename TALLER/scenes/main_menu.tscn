@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://6ignnfvx3gva" path="res://scenes/parallax_background.tscn" id="1_q2hin"]
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_r5yqq"]
-[ext_resource type="FontFile" uid="uid://b6p2khpfcrmwx" path="res://assets/Abaddon Bold.ttf" id="1_vubvo"]
+[ext_resource type="FontFile" uid="uid://b6p2khpfcrmwx" path="res://resources/Abaddon Bold.ttf" id="1_vubvo"]
 
 [sub_resource type="Theme" id="Theme_8emwk"]
 default_font = ExtResource("1_vubvo")
