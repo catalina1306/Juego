@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://blmtvgv8664uv"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_nn7jm"]
-[ext_resource type="PackedScene" uid="uid://dd45508vobh7s" path="res://Scenes/parallax_background.tscn" id="1_wtenk"]
+[ext_resource type="PackedScene" uid="uid://dd45508vobh7s" path="res://scenes/parallax_background.tscn" id="1_wtenk"]
 
 [node name="MainMenu" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

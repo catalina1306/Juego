@@ -1,13 +1,15 @@
-[gd_scene load_steps=62 format=3 uid="uid://d2psvkatn1d0t"]
+[gd_scene load_steps=85 format=3 uid="uid://s6hncargbeo3"]
 
-[ext_resource type="PackedScene" uid="uid://b742rqp6hc860" path="res://Scenes/brazo_verde_2.tscn" id="1_h61t2"]
-[ext_resource type="Texture2D" uid="uid://b75ynfma7cwhi" path="res://Assets/Personaje/Character Idle 48x48.png" id="2_2o3hq"]
-[ext_resource type="Texture2D" uid="uid://q6d2cwuuqt4y" path="res://Assets/Personaje/idle-verde.png" id="3_pqq1v"]
-[ext_resource type="Texture2D" uid="uid://dc18m4ikxtcyk" path="res://Assets/Personaje/player jump 48x48.png" id="4_6e4n4"]
-[ext_resource type="Texture2D" uid="uid://be35vjirsxef2" path="res://Assets/Personaje/jump-verde.png" id="5_dbc7u"]
-[ext_resource type="Texture2D" uid="uid://0v3lhj57jr38" path="res://Assets/Personaje/lanzamientobrazo.png" id="6_q7sdb"]
-[ext_resource type="Texture2D" uid="uid://ba5lkdbkbdhhi" path="res://Assets/Personaje/run cycle 48x48.png" id="7_alnq7"]
-[ext_resource type="Texture2D" uid="uid://jhendr4bbs0d" path="res://Assets/Personaje/run-verde.png" id="8_af16e"]
+[ext_resource type="Texture2D" uid="uid://b75ynfma7cwhi" path="res://resources/players/Character Idle 48x48.png" id="2_2o3hq"]
+[ext_resource type="Texture2D" uid="uid://cu1ta5uscftph" path="res://resources/players/idle-morado.png" id="2_joq01"]
+[ext_resource type="Texture2D" uid="uid://q6d2cwuuqt4y" path="res://resources/players/idle-verde.png" id="3_pqq1v"]
+[ext_resource type="Texture2D" uid="uid://dc18m4ikxtcyk" path="res://resources/players/player jump 48x48.png" id="4_6e4n4"]
+[ext_resource type="Texture2D" uid="uid://be35vjirsxef2" path="res://resources/players/jump-verde.png" id="5_dbc7u"]
+[ext_resource type="Texture2D" uid="uid://dgy824jenbxfk" path="res://resources/players/jump-morado.png" id="5_obl25"]
+[ext_resource type="Texture2D" uid="uid://0v3lhj57jr38" path="res://resources/players/lanzamientobrazo.png" id="6_q7sdb"]
+[ext_resource type="Texture2D" uid="uid://ba5lkdbkbdhhi" path="res://resources/players/run cycle 48x48.png" id="7_alnq7"]
+[ext_resource type="Texture2D" uid="uid://jhendr4bbs0d" path="res://resources/players/run-verde.png" id="8_af16e"]
+[ext_resource type="Texture2D" uid="uid://bxtgkw7831cxl" path="res://resources/players/run-morado.png" id="9_8flb7"]
 
 [sub_resource type="GDScript" id="GDScript_qew2v"]
 script/source = "extends CharacterBody2D
@@ -15,12 +17,14 @@ script/source = "extends CharacterBody2D
 var speed = 300
 var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
 var jump_speed = -500
-var lanzar_animation_playing = false
-var brazos_count = 1
+var brazos_count = 4
 
 @onready var _animated_sprite = $AnimatedSprite2D
-@export var brazo_scene: PackedScene 
+@export var brazo_verde = preload(\"res://Scenes/brazo_verde.tscn\")
+@export var brazo_morado = preload(\"res://Scenes/brazo_morado.tscn\")
 @onready var hombro = $hombro
+
+
 
 func _ready() -> void:
 	pass
@@ -29,31 +33,44 @@ func _process(delta: float) -> void:
 	var move_input = Input.get_action_strength(\"move_right2\") - Input.get_action_strength(\"move_left2\")
 
 	if move_input > 0:
-		if lanzar_animation_playing:
-			_animated_sprite.play(\"run-verde\")
-		else:
+		if brazos_count == 4:
 			_animated_sprite.play(\"run\")
+		if brazos_count == 3:
+			_animated_sprite.play(\"run-verde\")
+		if brazos_count == 2:
+			_animated_sprite.play(\"run-morado\")
+		if brazos_count == 1:
+			_animated_sprite.play(\"run-morado\")
+		if brazos_count == 0:
+			_animated_sprite.play(\"run-morado\")
 		_animated_sprite.flip_h = true
 	elif move_input < 0:
-		if lanzar_animation_playing:
-			_animated_sprite.play(\"run-verde\")
-		else:
+		if brazos_count == 4:
 			_animated_sprite.play(\"run\")
+		if brazos_count == 3:
+			_animated_sprite.play(\"run-verde\")
+		if brazos_count == 2:
+			_animated_sprite.play(\"run-morado\")
+		if brazos_count == 1:
+			_animated_sprite.play(\"run-morado\")
+		if brazos_count == 0:
+			_animated_sprite.play(\"run-morado\")
 		_animated_sprite.flip_h = false
 	else:
 		if is_on_floor():
-			if lanzar_animation_playing:
-				_animated_sprite.play(\"idle-verde\")
-			else:
+			if brazos_count == 4:
 				_animated_sprite.play(\"idle\")
+			if brazos_count == 3:
+				_animated_sprite.play(\"idle-verde\")
+			if brazos_count == 2:
+				_animated_sprite.play(\"idle-morado\")
+			if brazos_count == 1:
+				_animated_sprite.play(\"idle-morado\")
+			if brazos_count == 0:
+				_animated_sprite.play(\"idle-morado\")
 		else:
 			_animated_sprite.stop()
-		#_animated_sprite.flip_h = false (poner si se quiere que siempre mire a la izquierda)
-	
-	if Input.is_action_just_pressed(\"lanzar2\"):
-		_animated_sprite.play(\"lanzar\")
-		lanzar_animation_playing = true
-		
+		#_animated_sprite.flip_h = false (poner si se quiere que siempre mire a la derecha)
 		
 		
 func _physics_process(delta: float) -> void:
@@ -62,13 +79,24 @@ func _physics_process(delta: float) -> void:
 
 	var move_input = Input.get_action_strength(\"move_right2\") - Input.get_action_strength(\"move_left2\")
 
+	if Input.is_action_just_pressed(\"lanzar2\") && brazos_count >=0:
+		lanzar()
+		_animated_sprite.play(\"lanzar\")
+		brazos_count -=1
+
 	# Handle Jump.
 	if Input.is_action_just_pressed(\"move_up2\"):
 		if is_on_floor():
-			if lanzar_animation_playing:
-				_animated_sprite.play(\"jump-verde\")
-			else:
+			if brazos_count == 4:
 				_animated_sprite.play(\"jump\")
+			if brazos_count == 3:
+				_animated_sprite.play(\"jump-verde\")
+			if brazos_count == 2:
+				_animated_sprite.play(\"jump-morado\")
+			if brazos_count == 1:
+				_animated_sprite.play(\"jump-morado\")
+			if brazos_count == 0:
+				_animated_sprite.play(\"jump-morado\")
 			velocity.y = jump_speed
 
 	if move_input != 0:
@@ -78,29 +106,34 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	if Input.is_action_just_pressed(\"lanzar2\") && brazos_count >0:
-		lanzar()
-		_animated_sprite.play(\"lanzar\")
-		lanzar_animation_playing = true
-		brazos_count -=1
-
 # Agregar esta función para controlar el último frame de la animación de salto
 func _on_AnimatedSprite2D_animation_finished():
 	if _animated_sprite.animation == \"jump\":
 		_animated_sprite.frame = _animated_sprite.frame_count - 1
 	elif _animated_sprite.animation == \"jump-verde\":
 		_animated_sprite.frame = _animated_sprite.frame_count - 1
-		
+	elif _animated_sprite.animation == \"jump-morado\":
+		_animated_sprite.frame = _animated_sprite.frame_count - 1
 	elif _animated_sprite.animation == \"lanzar\":
 		_animated_sprite.frame = _animated_sprite.frame_count - 1
 
 func lanzar():
-	if not brazo_scene:
+	if not brazo_verde:
 		return
-	var extremidad = brazo_scene.instantiate()
-	get_parent().add_child(extremidad)
-	extremidad.global_position = hombro.global_position
-
+	if not brazo_morado:
+		return
+	if brazos_count == 4:
+		var extremidad = brazo_verde.instantiate() as RigidBody2D
+		extremidad.add_collision_exception_with(self)
+		get_parent().add_child(extremidad)
+		extremidad.global_position = hombro.global_position
+		extremidad.apply_central_impulse((Vector2.RIGHT if _animated_sprite.flip_h else Vector2.LEFT)*750)
+	if brazos_count == 3:
+		var extremidad = brazo_morado.instantiate() as RigidBody2D
+		extremidad.add_collision_exception_with(self)
+		get_parent().add_child(extremidad)
+		extremidad.global_position = hombro.global_position
+		extremidad.apply_central_impulse((Vector2.RIGHT if _animated_sprite.flip_h else Vector2.LEFT)*750)
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0sqv"]
@@ -141,6 +174,46 @@ region = Rect2(384, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y6g4d"]
 atlas = ExtResource("2_2o3hq")
+region = Rect2(432, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ox56p"]
+atlas = ExtResource("2_joq01")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buk3y"]
+atlas = ExtResource("2_joq01")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01mts"]
+atlas = ExtResource("2_joq01")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7d3d6"]
+atlas = ExtResource("2_joq01")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bn86c"]
+atlas = ExtResource("2_joq01")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlavw"]
+atlas = ExtResource("2_joq01")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_re42v"]
+atlas = ExtResource("2_joq01")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrg3r"]
+atlas = ExtResource("2_joq01")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afd4m"]
+atlas = ExtResource("2_joq01")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttkdq"]
+atlas = ExtResource("2_joq01")
 region = Rect2(432, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7484o"]
@@ -193,6 +266,18 @@ region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oyf6w"]
 atlas = ExtResource("4_6e4n4")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mjqh"]
+atlas = ExtResource("5_obl25")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1g6j"]
+atlas = ExtResource("5_obl25")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8aon"]
+atlas = ExtResource("5_obl25")
 region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sgcki"]
@@ -271,6 +356,38 @@ region = Rect2(288, 0, 48, 48)
 atlas = ExtResource("7_alnq7")
 region = Rect2(336, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yiq4"]
+atlas = ExtResource("9_8flb7")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inxxc"]
+atlas = ExtResource("9_8flb7")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1j3qp"]
+atlas = ExtResource("9_8flb7")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnejf"]
+atlas = ExtResource("9_8flb7")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63q81"]
+atlas = ExtResource("9_8flb7")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlcxj"]
+atlas = ExtResource("9_8flb7")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yp2g"]
+atlas = ExtResource("9_8flb7")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql1aq"]
+atlas = ExtResource("9_8flb7")
+region = Rect2(336, 0, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8uf7"]
 atlas = ExtResource("8_af16e")
 region = Rect2(0, 0, 48, 48)
@@ -342,6 +459,41 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ox56p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buk3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01mts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7d3d6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bn86c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlavw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_re42v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrg3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afd4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttkdq")
+}],
+"loop": true,
+"name": &"idle-morado",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_7484o")
 }, {
 "duration": 1.0,
@@ -387,6 +539,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mjqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1g6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8aon")
+}],
+"loop": true,
+"name": &"jump-morado",
 "speed": 10.0
 }, {
 "frames": [{
@@ -463,6 +629,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_1yiq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inxxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1j3qp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnejf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63q81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlcxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yp2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ql1aq")
+}],
+"loop": true,
+"name": &"run-morado",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_d8uf7")
 }, {
 "duration": 1.0,
@@ -497,16 +692,15 @@ height = 160.0
 
 [node name="personaje_2" type="CharacterBody2D"]
 script = SubResource("GDScript_qew2v")
-brazo_scene = ExtResource("1_h61t2")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(-5, 5)
 sprite_frames = SubResource("SpriteFrames_iv2ls")
-animation = &"idle"
+animation = &"run-morado"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_spmo5")
 
 [node name="hombro" type="Marker2D" parent="."]
-position = Vector2(-15, -13)
+position = Vector2(0, -13)

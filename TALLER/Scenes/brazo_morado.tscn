@@ -1,0 +1,108 @@
+[gd_scene load_steps=13 format=3 uid="uid://deuc3duijk0a3"]
+
+[ext_resource type="Texture2D" uid="uid://7v6g2s4xdgaw" path="res://resources/players/brazomorado.png" id="1_jfshe"]
+
+[sub_resource type="GDScript" id="GDScript_0k7cn"]
+script/source = "extends RigidBody2D
+
+var speed = 1000
+
+
+@onready var _animated_sprite = $AnimatedSprite2D
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	body_entered.connect(_on_body_entered)
+
+func _physics_process(delta: float) -> void:
+	pass
+
+
+func _on_body_entered(body: Node2D):
+	_animated_sprite.play(\"tirado\")
+	queue_free()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ygig"]
+atlas = ExtResource("1_jfshe")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qnkt"]
+atlas = ExtResource("1_jfshe")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgead"]
+atlas = ExtResource("1_jfshe")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq4ce"]
+atlas = ExtResource("1_jfshe")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lbid"]
+atlas = ExtResource("1_jfshe")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw1jj"]
+atlas = ExtResource("1_jfshe")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7am3"]
+atlas = ExtResource("1_jfshe")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu18a"]
+atlas = ExtResource("1_jfshe")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5u3jp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ygig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qnkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgead")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq4ce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lbid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw1jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7am3")
+}],
+"loop": true,
+"name": &"girar",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cu18a")
+}],
+"loop": true,
+"name": &"tirado",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ma7o"]
+size = Vector2(11, 5)
+
+[node name="brazo_morado" type="RigidBody2D"]
+script = SubResource("GDScript_0k7cn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_5u3jp")
+animation = &"tirado"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 2)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_8ma7o")
