@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ci5b7qgnr5g"]
 
-[ext_resource type="Texture2D" uid="uid://c8dlhdeo636fy" path="res://Assets/Escenario/far-grounds.png" id="1_f57fi"]
+[ext_resource type="Texture2D" uid="uid://c8dlhdeo636fy" path="res://resources/escenaries/far-grounds.png" id="1_f57fi"]
 
 [node name="cerros_2" type="StaticBody2D"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://s6hncargbeo3"]
+[gd_scene load_steps=86 format=3 uid="uid://s6hncargbeo3"]
 
 [ext_resource type="Texture2D" uid="uid://b75ynfma7cwhi" path="res://resources/players/Character Idle 48x48.png" id="2_2o3hq"]
 [ext_resource type="Texture2D" uid="uid://cu1ta5uscftph" path="res://resources/players/idle-morado.png" id="2_joq01"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ba5lkdbkbdhhi" path="res://resources/players/run cycle 48x48.png" id="7_alnq7"]
 [ext_resource type="Texture2D" uid="uid://jhendr4bbs0d" path="res://resources/players/run-verde.png" id="8_af16e"]
 [ext_resource type="Texture2D" uid="uid://bxtgkw7831cxl" path="res://resources/players/run-morado.png" id="9_8flb7"]
+[ext_resource type="PackedScene" uid="uid://b55vejarabhjh" path="res://Scenes/hud.tscn" id="11_2aq6m"]
 
 [sub_resource type="GDScript" id="GDScript_qew2v"]
 script/source = "extends CharacterBody2D
@@ -23,8 +24,15 @@ var brazos_count = 4
 @export var brazo_verde = preload(\"res://Scenes/brazo_verde.tscn\")
 @export var brazo_morado = preload(\"res://Scenes/brazo_morado.tscn\")
 @onready var hombro = $hombro
+@onready var hud = $CanvasLayer/hud
 
-
+var health = 100:
+	set(value):
+		health = value
+		if hud:
+			hud.set_health(health)
+		
+var maxHealth = 100
 
 func _ready() -> void:
 	pass
@@ -134,6 +142,11 @@ func lanzar():
 		get_parent().add_child(extremidad)
 		extremidad.global_position = hombro.global_position
 		extremidad.apply_central_impulse((Vector2.RIGHT if _animated_sprite.flip_h else Vector2.LEFT)*750)
+
+func take_damage():
+	if health > 0 :
+		health = max(health-10,0)
+	
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0sqv"]
@@ -704,3 +717,7 @@ shape = SubResource("CapsuleShape2D_spmo5")
 
 [node name="hombro" type="Marker2D" parent="."]
 position = Vector2(0, -13)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="hud" parent="CanvasLayer" instance=ExtResource("11_2aq6m")]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2y57yfe3wu0j"]
+[gd_scene load_steps=15 format=3 uid="uid://d2y57yfe3wu0j"]
 
+[ext_resource type="Script" path="res://Scripts/Hurtbox.gd" id="2_g6qwe"]
 [ext_resource type="Texture2D" uid="uid://bbvagqqk06mjc" path="res://resources/players/brazoverde.png" id="2_qrhmj"]
 
 [sub_resource type="GDScript" id="GDScript_0k7cn"]
@@ -94,6 +95,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ma7o"]
 size = Vector2(11, 5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjltm"]
+
 [node name="brazo_verde2" type="RigidBody2D"]
 script = SubResource("GDScript_0k7cn")
 
@@ -106,3 +109,13 @@ animation = &"tirado"
 position = Vector2(3, 2)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_8ma7o")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_g6qwe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(3, 2)
+scale = Vector2(3, 1.5)
+shape = SubResource("RectangleShape2D_kjltm")

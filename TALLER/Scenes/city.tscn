@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b8hb630o0rim1"]
+[gd_scene load_steps=25 format=3 uid="uid://2ocnpirqlcow"]
 
 [ext_resource type="Texture2D" uid="uid://34gloya5gse7" path="res://resources/environment/bg-2.png" id="1_88u70"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_sfk1h"]
@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ie5583b03usc" path="res://resources/2 Background/Day/2.png" id="4_r4hfv"]
 [ext_resource type="Texture2D" uid="uid://dqjciokngbog7" path="res://resources/2 Background/Day/3.png" id="5_mbmxr"]
 [ext_resource type="Texture2D" uid="uid://0q7yt41q7wg" path="res://resources/2 Background/Day/4.png" id="6_knyxd"]
-[ext_resource type="PackedScene" uid="uid://c40ifbh3pfsnu" path="res://scenes/personaje_1.tscn" id="7_puvfj"]
-[ext_resource type="PackedScene" uid="uid://s6hncargbeo3" path="res://scenes/personaje_2.tscn" id="8_l4550"]
+[ext_resource type="PackedScene" path="res://scenes/personaje_1.tscn" id="7_puvfj"]
+[ext_resource type="PackedScene" path="res://scenes/personaje_2.tscn" id="8_l4550"]
 [ext_resource type="Texture2D" uid="uid://cffp37y7vkxt2" path="res://resources/1 Tiles/Tileset.png" id="9_nmn1f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jog4l"]

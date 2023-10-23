@@ -1,5 +1,6 @@
-[gd_scene load_steps=85 format=3 uid="uid://c1b74tacnbdvd"]
+[gd_scene load_steps=91 format=3 uid="uid://c1b74tacnbdvd"]
 
+[ext_resource type="Texture2D" uid="uid://dnmeovablo4it" path="res://resources/players/Player Hurt 48x48.png" id="1_1pfky"]
 [ext_resource type="Texture2D" uid="uid://b75ynfma7cwhi" path="res://resources/players/Character Idle 48x48.png" id="1_67hw2"]
 [ext_resource type="Texture2D" uid="uid://q6d2cwuuqt4y" path="res://resources/players/idle-verde.png" id="2_7ie5o"]
 [ext_resource type="Texture2D" uid="uid://cu1ta5uscftph" path="res://resources/players/idle-morado.png" id="2_fk6nw"]
@@ -10,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ba5lkdbkbdhhi" path="res://resources/players/run cycle 48x48.png" id="6_g50wg"]
 [ext_resource type="Texture2D" uid="uid://jhendr4bbs0d" path="res://resources/players/run-verde.png" id="7_l0uww"]
 [ext_resource type="Texture2D" uid="uid://bxtgkw7831cxl" path="res://resources/players/run-morado.png" id="9_tdqcc"]
+[ext_resource type="PackedScene" uid="uid://b55vejarabhjh" path="res://Scenes/hud.tscn" id="12_be4hr"]
 
 [sub_resource type="GDScript" id="GDScript_4p4kc"]
 script/source = "extends CharacterBody2D
@@ -23,8 +25,15 @@ var brazos_count = 4
 @export var brazo_verde = preload(\"res://Scenes/brazo_verde.tscn\")
 @export var brazo_morado = preload(\"res://Scenes/brazo_morado.tscn\")
 @onready var hombro = $hombro
+@onready var hud = $CanvasLayer/hud
 
+var health = 100:
+	set(value):
+		health = value
+		if hud:
+			hud.set_health(health)
 
+var maxHealth = 100
 
 func _ready() -> void:
 	pass
@@ -134,7 +143,27 @@ func lanzar():
 		get_parent().add_child(extremidad)
 		extremidad.global_position = hombro.global_position
 		extremidad.apply_central_impulse((Vector2.LEFT if _animated_sprite.flip_h else Vector2.RIGHT)*750)
+
+func take_damage():
+	if health > 0 :
+		health = max(health-10,0)
 "
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvn8b"]
+atlas = ExtResource("1_1pfky")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4auv"]
+atlas = ExtResource("1_1pfky")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j6rd"]
+atlas = ExtResource("1_1pfky")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dhcp"]
+atlas = ExtResource("1_1pfky")
+region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0sqv"]
 atlas = ExtResource("1_67hw2")
@@ -424,6 +453,23 @@ region = Rect2(336, 0, 48, 48)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_qvn8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4auv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j6rd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dhcp")
+}],
+"loop": true,
+"name": &"Hurt",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_y0sqv")
 }, {
 "duration": 1.0,
@@ -490,7 +536,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle-morado",
-"speed": 10.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -697,10 +743,14 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_dm6l0")
-animation = &"idle-morado"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_bk07x")
 
 [node name="hombro" type="Marker2D" parent="."]
 position = Vector2(0, -13)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="hud" parent="CanvasLayer" instance=ExtResource("12_be4hr")]
