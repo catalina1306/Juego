@@ -10,8 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Quarter Extremeties Fight"
-run/main_scene="res://Scenes/main_menu.tscn"
+config/name="Juego"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
