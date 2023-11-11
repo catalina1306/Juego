@@ -1,6 +1,6 @@
 extends MarginContainer
 
-# HOLA hola 
+# HOLA 
 
 @onready var health_bar = $VBoxContainer/HBoxContainer/HealthBar
 
