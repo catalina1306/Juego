@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ba5lkdbkbdhhi" path="res://resources/players/run cycle 48x48.png" id="7_alnq7"]
 [ext_resource type="Texture2D" uid="uid://jhendr4bbs0d" path="res://resources/players/run-verde.png" id="8_af16e"]
 [ext_resource type="Texture2D" uid="uid://bxtgkw7831cxl" path="res://resources/players/run-morado.png" id="9_8flb7"]
-[ext_resource type="PackedScene" uid="uid://b55vejarabhjh" path="res://Scenes/hud.tscn" id="11_2aq6m"]
+[ext_resource type="PackedScene" uid="uid://ctyl08m7bjn7p" path="res://Scenes/hud2.tscn" id="11_bt31r"]
 
 [sub_resource type="GDScript" id="GDScript_qew2v"]
 script/source = "extends CharacterBody2D
@@ -720,4 +720,11 @@ position = Vector2(0, -13)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="hud" parent="CanvasLayer" instance=ExtResource("11_2aq6m")]
+[node name="hud" parent="CanvasLayer" instance=ExtResource("11_bt31r")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_bottom = 0.0
+offset_left = -495.0
+offset_bottom = 50.0
+grow_horizontal = 0
+grow_vertical = 1
