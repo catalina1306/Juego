@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/brazo_verde2.gd" id="1_fencf"]
 [ext_resource type="Texture2D" uid="uid://bbvagqqk06mjc" path="res://resources/players/brazoverde.png" id="2_qrhmj"]
-[ext_resource type="Script" path="res://Scenes/Area2Dv.gd" id="3_i6o2n"]
+[ext_resource type="Script" path="res://Scripts/Area2Dv.gd" id="3_i6o2n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_im2jj"]
 atlas = ExtResource("2_qrhmj")
