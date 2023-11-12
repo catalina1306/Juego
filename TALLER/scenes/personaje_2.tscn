@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://s6hncargbeo3"]
+[gd_scene load_steps=86 format=3 uid="uid://ckwymrjkv7s2t"]
 
 [ext_resource type="Texture2D" uid="uid://b75ynfma7cwhi" path="res://resources/players/Character Idle 48x48.png" id="2_2o3hq"]
 [ext_resource type="Texture2D" uid="uid://cu1ta5uscftph" path="res://resources/players/idle-morado.png" id="2_joq01"]
