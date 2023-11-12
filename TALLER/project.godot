@@ -10,7 +10,12 @@ config_version=5
 
 [application]
 
+<<<<<<< HEAD
+config/name="Taller"
+run/main_scene="res://Scenes/main_menu.tscn"
+=======
 config/name="Juego"
+>>>>>>> 77869c6f09027505ef6fd64a1277d64404fbafa7
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
