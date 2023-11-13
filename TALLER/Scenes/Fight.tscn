@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqvgch1u7sylv"]
+[gd_scene load_steps=3 format=3 uid="uid://dqvgch1u7sylv"]
 
-[ext_resource type="Script" path="res://Scenes/Scene.gd" id="1_b7vrd"]
+[ext_resource type="Script" path="res://Scripts/Fight.gd" id="1_quxwf"]
+[ext_resource type="Script" path="res://Scripts/scene.gd" id="2_iyhyu"]
 
 [node name="Fight" type="Node2D"]
+script = ExtResource("1_quxwf")
 
-[node name="Scene" type="Node2D" parent="."]
-script = ExtResource("1_b7vrd")
+[node name="scene" type="Node2D" parent="."]
+script = ExtResource("2_iyhyu")
