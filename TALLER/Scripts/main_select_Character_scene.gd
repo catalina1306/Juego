@@ -1,7 +1,7 @@
 extends Control
 @onready var fight = $VBoxContainer/Fight
 @onready var back = $VBoxContainer2/back
-var castle: String = "res://Scenes/castle.tscn"
+var castle: String = "res://Scenes/castle2.tscn"
 var city: String = "res://Scenes/city.tscn"
 
 

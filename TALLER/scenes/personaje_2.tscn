@@ -17,11 +17,10 @@ script/source = "extends CharacterBody2D
 
 var speed = 300
 var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
-var jump_speed = -500
+var jump_speed = -750
 var brazos_count = 4
 
 @onready var _animated_sprite = $AnimatedSprite2D
-@export var brazo_verde = preload(\"res://Scenes/brazo_verde.tscn\")
 @export var brazo_morado = preload(\"res://Scenes/brazo_morado.tscn\")
 @onready var hombro = $hombro
 @onready var hud = $CanvasLayer/hud
@@ -90,7 +89,7 @@ func _physics_process(delta: float) -> void:
 
 	var move_input = Input.get_action_strength(\"move_right2\") - Input.get_action_strength(\"move_left2\")
 
-	if Input.is_action_just_pressed(\"lanzar2\") && brazos_count >=0:
+	if Input.is_action_just_pressed(\"lanzar2\") && brazos_count >0:
 		lanzar()
 		_animated_sprite.play(\"lanzar\")
 		brazos_count -=1
@@ -129,31 +128,34 @@ func _on_AnimatedSprite2D_animation_finished():
 		_animated_sprite.frame = _animated_sprite.frame_count - 1
 
 func lanzar():
-	if not brazo_verde:
-		return
 	if not brazo_morado:
 		return
-	if brazos_count == 4:
-		var extremidad = brazo_verde.instantiate() as RigidBody2D
-		extremidad.add_collision_exception_with(self)
-		get_parent().add_child(extremidad)
-		extremidad.global_position = hombro.global_position
-		extremidad.apply_central_impulse((Vector2.RIGHT if _animated_sprite.flip_h else Vector2.LEFT)*750)
-	if brazos_count == 3:
+	if brazos_count > 0:
 		var extremidad = brazo_morado.instantiate() as RigidBody2D
 		extremidad.add_collision_exception_with(self)
-		get_parent().add_child(extremidad)
+		add_child(extremidad)
 		extremidad.global_position = hombro.global_position
 		extremidad.apply_central_impulse((Vector2.RIGHT if _animated_sprite.flip_h else Vector2.LEFT)*750)
-
-func take_damage():
-	if health > 0 :
-		health = max(health-10,0)
 
 func game_over():
 	mostrar_game_over_scene()
 func mostrar_game_over_scene():
 	get_tree().change_scene_to_file(\"res://Scenes/GameOverMenu.tscn\")
+	
+func take_damage():
+	if health > 0 :
+		health = max(health-10,0)
+
+#func mostrar_menu_emergente():
+	# Captura y difumina el fondo
+	# Pausa el juego
+	#get_tree().paused = true
+	# Muestra el menú emergente
+	#var popup_menu = preload(\"res://Scenes/GameOver2.tscn\").instantiate()
+	#if popup_menu:
+	#	get_tree().get_root().add_child(popup_menu)
+	#	popup_menu.popup_centered()
+
 	
 "
 
@@ -712,6 +714,7 @@ radius = 41.0
 height = 160.0
 
 [node name="personaje_2" type="CharacterBody2D"]
+position = Vector2(-103, 92)
 script = SubResource("GDScript_qew2v")
 metadata/_edit_group_ = true
 
@@ -732,7 +735,7 @@ position = Vector2(0, -13)
 anchors_preset = 1
 anchor_left = 1.0
 anchor_bottom = 0.0
-offset_left = -495.0
-offset_bottom = 50.0
+offset_left = -498.0
+offset_bottom = 72.0
 grow_horizontal = 0
 grow_vertical = 1

@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://cger14ic84s1v"]
+
+[ext_resource type="Script" path="res://Scenes/GameOver2.gd" id="1_djckb"]
+
+[node name="PopupMenu" type="VBoxContainer"]
+script = ExtResource("1_djckb")
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 2
+text = "Exit"
+
+[node name="Main Menu" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Main Menu"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Game Over"
+
+[node name="Play Again" type="Button" parent="."]
+layout_mode = 2
+text = "Play Again"

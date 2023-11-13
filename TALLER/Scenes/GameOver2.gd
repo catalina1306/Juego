@@ -1,9 +1,13 @@
-extends Control
-@onready var exit = $VBoxContainer/Exit
-@onready var menu = %Menu
-@onready var jugar = %"Jugar de nuevo"
+extends VBoxContainer
+
+var menu
+var jugar
+var exit
 
 func _ready() -> void:
+	menu = $"Main Menu"
+	jugar = $"Play Again"
+	exit = $Exit
 
 	if menu != null:
 		menu.pressed.connect(_on_menu_pressed)
@@ -18,7 +22,7 @@ func _on_menu_pressed():
 
 func _on_jugar_pressed():
 	if jugar != null:
-		get_tree().change_scene_to_file(global.scene_dir)
+		get_tree().change_scene_to_file("res://Scenes/main_select_Character_scene.tscn")
 
 func _on_exit_pressed():
 	if exit != null:

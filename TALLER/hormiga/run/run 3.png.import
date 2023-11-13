@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctgcgnmyo55kn"
-path="res://.godot/imported/Overlay.png-eab6e8fc805c0791af00d87eb489678f.ctex"
+uid="uid://lr2fn4ho7h66"
+path="res://.godot/imported/run 3.png-3fe25fb6a7269979711010c304220841.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/2 Background/Overlay.png"
-dest_files=["res://.godot/imported/Overlay.png-eab6e8fc805c0791af00d87eb489678f.ctex"]
+source_file="res://hormiga/run/run 3.png"
+dest_files=["res://.godot/imported/run 3.png-3fe25fb6a7269979711010c304220841.ctex"]
 
 [params]
 
