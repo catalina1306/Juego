@@ -36,8 +36,11 @@ var maxHealth = 100
 
 func _ready() -> void:
 	hud.set_health(health)
-
+	
 func _process(delta: float) -> void:
+	if health <= 0:
+		game_over()
+	
 	var move_input = Input.get_action_strength(\"move_right2\") - Input.get_action_strength(\"move_left2\")
 
 	if move_input > 0:
@@ -146,6 +149,11 @@ func lanzar():
 func take_damage():
 	if health > 0 :
 		health = max(health-10,0)
+
+func game_over():
+	mostrar_game_over_scene()
+func mostrar_game_over_scene():
+	get_tree().change_scene_to_file(\"res://Scenes/GameOverMenu.tscn\")
 	
 "
 

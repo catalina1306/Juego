@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cimjidp6llfjc" path="res://resources/layers/middleground.png" id="1_hrdt6"]
 [ext_resource type="PackedScene" uid="uid://c1b74tacnbdvd" path="res://Scenes/personaje_1.tscn" id="2_8xqle"]
-[ext_resource type="PackedScene" uid="uid://s6hncargbeo3" path="res://Scenes/personaje_2.tscn" id="3_w80xy"]
+[ext_resource type="PackedScene" uid="uid://ckwymrjkv7s2t" path="res://Scenes/personaje_2.tscn" id="3_w80xy"]
 [ext_resource type="Texture2D" uid="uid://bqp5yrshoyxp7" path="res://resources/layers/tileset.png" id="4_ylgyf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7njx"]
