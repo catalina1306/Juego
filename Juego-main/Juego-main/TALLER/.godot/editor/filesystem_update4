@@ -1,0 +1,15 @@
+res://Scenes/city.tscn
+res://Scenes/main_menu.tscn
+res://Scenes/brazo_verde_2.tscn
+res://Scenes/personaje_1.tscn
+res://Scenes/hud2.tscn
+res://Scenes/Fight.tscn
+res://Scenes/main_select_Character_scene.tscn
+res://Scenes/castle.tscn
+res://Scenes/personaje_2.tscn
+res://Scenes/hud.tscn
+res://Scripts/level.gd
+res://Scenes/brazo_verde.tscn
+res://GameOverMenu.gd
+res://Scripts/main_menu.gd
+res://Scenes/GameOverMenu.tscn
