@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbpgcbsyr7sfg"]
 
-[ext_resource type="Script" path="res://GameOverMenu.gd" id="1_2ymnm"]
+[ext_resource type="Script" path="res://Scripts/GameOverMenu.gd" id="1_2ymnm"]
 [ext_resource type="PackedScene" uid="uid://bhdsouc2va3bo" path="res://Scenes/p_b_seleccion_escene.tscn" id="2_vusoy"]
 
 [node name="Control" type="Control"]

@@ -9,7 +9,7 @@ func _ready() -> void:
 	exit.pressed.connect(_on_exit_pressed)
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://Scenes/main_select_Character_scene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/main_select_character.tscn")
 	
 func _on_exit_pressed():
 	get_tree().quit()

@@ -1,9 +1,12 @@
 extends Control
-@onready var fight = $VBoxContainer/Fight
-@onready var back = $VBoxContainer2/back
-var castle: String = "res://Scenes/castle2.tscn"
-var city: String = "res://Scenes/city.tscn"
 
+@onready var back = $VBoxContainer2/back
+
+### hay hacer dos escenas de selccion para el personaje 1 y para el personaje 2 y guardarlas en el global 
+
+
+var default: String = "res://Scenes/personaje2.tscn"
+var ant: String = "res://Scenes/personaje1.tscn" 
 
 
 func _ready() -> void:
@@ -15,11 +18,11 @@ func _on_return_pressed():
 func go_to_scene():
 	get_tree().change_scene_to_file(global.scene_dir)
 
-func _on_texture_button_pressed(): 
-	global.scene_dir = castle
+func _on_antb_pressed():
+	global.scene_dir += ant
 	go_to_scene()
 
 
-func _on_texture_button_2_pressed():
-	global.scene_dir = city
+func _on_defaultb_pressed():
+	global.characters += default
 	go_to_scene()

@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://byx6sco0123n3"]
+[gd_scene load_steps=5 format=3 uid="uid://dsyx7s2hb82i2"]
 
-[ext_resource type="PackedScene" uid="uid://bhdsouc2va3bo" path="res://Scenes/p_b_seleccion_escene.tscn" id="1_6b02q"]
-[ext_resource type="Script" path="res://Scripts/main_select_Character_scene.gd" id="1_eveg2"]
-[ext_resource type="Texture2D" uid="uid://cckk621ly65a2" path="res://resources/castlepic.jpg" id="3_1gjat"]
-[ext_resource type="Texture2D" uid="uid://bxhwpb1rl4a3q" path="res://resources/citypic.jpg" id="4_bi7x8"]
+[ext_resource type="Script" path="res://Scripts/main_select_character.gd" id="1_btvq1"]
+[ext_resource type="PackedScene" uid="uid://bhdsouc2va3bo" path="res://Scenes/p_b_seleccion_escene.tscn" id="2_nlbyo"]
+[ext_resource type="Texture2D" uid="uid://cckk621ly65a2" path="res://resources/castlepic.jpg" id="3_tph4q"]
+[ext_resource type="Texture2D" uid="uid://bxhwpb1rl4a3q" path="res://resources/citypic.jpg" id="4_dnlhh"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -16,7 +16,7 @@ offset_right = 2.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_eveg2")
+script = ExtResource("1_btvq1")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -50,9 +50,9 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
 text = "Return"
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("1_6b02q")]
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_nlbyo")]
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="defaultb" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.035
@@ -61,11 +61,11 @@ offset_left = 579.0
 offset_top = 211.0
 offset_right = 944.68
 offset_bottom = 437.824
-texture_normal = ExtResource("3_1gjat")
+texture_normal = ExtResource("3_tph4q")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="TextureButton2" type="TextureButton" parent="."]
+[node name="antb" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.035
@@ -74,9 +74,9 @@ offset_left = 150.0
 offset_top = 213.0
 offset_right = 517.68
 offset_bottom = 434.824
-texture_normal = ExtResource("4_bi7x8")
+texture_normal = ExtResource("4_dnlhh")
 ignore_texture_size = true
 stretch_mode = 0
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="defaultb" to="." method="_on_defaultb_pressed"]
+[connection signal="pressed" from="antb" to="." method="_on_antb_pressed"]
