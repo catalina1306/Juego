@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhdsouc2va3bo"]
+
+[ext_resource type="Texture2D" uid="uid://7fvm1r7i0ucu" path="res://resources/escenaries/nubes2.png" id="1_f7c8i"]
+[ext_resource type="Script" path="res://Scripts/p_b_seleccion_escene.gd" id="1_uo1e5"]
+[ext_resource type="Texture2D" uid="uid://bllxttfs3qtlm" path="res://resources/escenaries/nubes1.png" id="2_eebvh"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_uo1e5")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1240, 0)
+
+[node name="nube1" type="Sprite2D" parent="ParallaxLayer"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_f7c8i")
+centered = false
+
+[node name="nube2" type="Sprite2D" parent="ParallaxLayer"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_eebvh")
+centered = false
