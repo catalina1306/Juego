@@ -2036,8 +2036,8 @@ layer_0/tile_data = PackedInt32Array(1245184, 786432, 8, 1310720, 196608, 3, 137
 
 [node name="players" type="Node" parent="."]
 
-[node name="pos1" type="Marker2D" parent="."]
+[node name="pos2" type="Marker2D" parent="."]
 position = Vector2(2007, 216)
 
-[node name="pos2" type="Marker2D" parent="."]
+[node name="pos1" type="Marker2D" parent="."]
 position = Vector2(689, 183)

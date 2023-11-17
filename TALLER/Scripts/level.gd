@@ -18,6 +18,8 @@ func _ready():
 	personaje2.global_position = pos_2.global_position
 	players.add_child(personaje1)
 	players.add_child(personaje2)	
+	personaje1.index = 1
+	personaje2.index = 2
 
 func _physics_process(delta):
 	var pos := Vector2.ZERO as Vector2
