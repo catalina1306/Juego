@@ -149,6 +149,14 @@ func take_damage():
 	#	get_tree().get_root().add_child(popup_menu)
 	#	popup_menu.popup_centered()
 
+
+
+
+
+
+
+
+
 	
 "
 
