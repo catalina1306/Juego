@@ -6,8 +6,8 @@ extends Control
 ### hay hacer dos escenas de selccion para el personaje 1 y para el personaje 2 y guardarlas en el global 
 
 
-var default: String = "res://Scenes/personaje2.tscn"
-var ant: String = "res://Scenes/personaje1.tscn" 
+var default: String = "res://Scenes/personaje_2.tscn"
+var ant: String = "res://Scenes/personaje_1.tscn" 
 
 
 func _ready() -> void:

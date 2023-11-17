@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://2ocnpirqlcow"]
+[gd_scene load_steps=19 format=3 uid="uid://2ocnpirqlcow"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_sfk1h"]
 [ext_resource type="Texture2D" uid="uid://bj50tphlmwvx0" path="res://resources/layers/Sky-layer.png" id="2_wglfe"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://ie5583b03usc" path="res://resources/2 Background/Day/2.png" id="4_r4hfv"]
 [ext_resource type="Texture2D" uid="uid://dqjciokngbog7" path="res://resources/2 Background/Day/3.png" id="5_mbmxr"]
 [ext_resource type="Texture2D" uid="uid://0q7yt41q7wg" path="res://resources/2 Background/Day/4.png" id="6_knyxd"]
-[ext_resource type="PackedScene" uid="uid://c1b74tacnbdvd" path="res://Scenes/personaje_1.tscn" id="7_puvfj"]
-[ext_resource type="PackedScene" uid="uid://ckwymrjkv7s2t" path="res://Scenes/personaje_2.tscn" id="8_l4550"]
 [ext_resource type="Texture2D" uid="uid://cffp37y7vkxt2" path="res://resources/1 Tiles/Tileset.png" id="9_nmn1f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_37ry7"]
@@ -2038,10 +2036,8 @@ layer_0/tile_data = PackedInt32Array(1245184, 786432, 8, 1310720, 196608, 3, 137
 
 [node name="players" type="Node" parent="."]
 
-[node name="personaje_2" parent="players" instance=ExtResource("8_l4550")]
+[node name="pos1" type="Marker2D" parent="."]
 position = Vector2(2007, 216)
 
-[node name="personaje_1" parent="players" instance=ExtResource("7_puvfj")]
+[node name="pos2" type="Marker2D" parent="."]
 position = Vector2(689, 183)
-
-[node name="Sprite2D" type="Sprite2D" parent="players/personaje_1"]

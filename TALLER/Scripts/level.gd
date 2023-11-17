@@ -5,10 +5,19 @@ extends Node2D
 @export var a = 7000
 @onready var players = $players
 
-@onready var personaje1 = preload("res://Scenes/personaje_1.tscn").instantiate()
-@onready var personaje2 = preload("res://Scenes/personaje_2.tscn").instantiate()
+@onready var personaje1 = load(global.character1).instantiate()
+@onready var personaje2 = load(global.character2).instantiate()
 
 @onready var camera = $Camera2D
+@onready var pos_1 = $pos1
+@onready var pos_2 = $pos2
+
+
+func _ready():
+	personaje1.global_position = pos_1.global_position
+	personaje2.global_position = pos_2.global_position
+	players.add_child(personaje1)
+	players.add_child(personaje2)	
 
 func _physics_process(delta):
 	var pos := Vector2.ZERO as Vector2

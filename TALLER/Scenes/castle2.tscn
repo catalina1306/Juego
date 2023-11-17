@@ -1,11 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dw2ro1y4xuvox"]
+[gd_scene load_steps=11 format=3 uid="uid://dw2ro1y4xuvox"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_0wjym"]
 [ext_resource type="Texture2D" uid="uid://j2hn7uvyh0dn" path="res://resources/layers/background.png" id="2_ingdn"]
 [ext_resource type="Texture2D" uid="uid://cimjidp6llfjc" path="res://resources/layers/middleground.png" id="2_kkef2"]
 [ext_resource type="Texture2D" uid="uid://bqp5yrshoyxp7" path="res://resources/layers/tileset.png" id="4_5cqcs"]
-[ext_resource type="PackedScene" uid="uid://ckwymrjkv7s2t" path="res://Scenes/personaje_2.tscn" id="9_mur1l"]
-[ext_resource type="PackedScene" uid="uid://c1b74tacnbdvd" path="res://Scenes/personaje_1.tscn" id="10_gma1l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fftx2"]
 texture = ExtResource("2_ingdn")
@@ -2145,7 +2143,7 @@ texture = ExtResource("4_5cqcs")
 physics_layer_0/collision_layer = 1
 sources/7 = SubResource("TileSetAtlasSource_81jeq")
 
-[node name="city" type="Node2D"]
+[node name="castle" type="Node2D"]
 script = ExtResource("1_0wjym")
 camera_max_zoom = 1.2
 camera_min_zoom = 0.6
@@ -2182,10 +2180,8 @@ layer_0/tile_data = PackedInt32Array(1376256, 1310727, 9, 1441792, 1310727, 10, 
 
 [node name="players" type="Node" parent="."]
 
-[node name="personaje_2" parent="players" instance=ExtResource("9_mur1l")]
-position = Vector2(2007, 193)
-
-[node name="personaje_1" parent="players" instance=ExtResource("10_gma1l")]
+[node name="pos1" type="Marker2D" parent="."]
 position = Vector2(689, 183)
 
-[node name="Sprite2D" type="Sprite2D" parent="players/personaje_1"]
+[node name="pos2" type="Marker2D" parent="."]
+position = Vector2(2007, 193)

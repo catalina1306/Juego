@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/main_select_character.gd" id="1_btvq1"]
 [ext_resource type="PackedScene" uid="uid://bhdsouc2va3bo" path="res://Scenes/p_b_seleccion_escene.tscn" id="2_nlbyo"]
-[ext_resource type="Texture2D" uid="uid://cckk621ly65a2" path="res://resources/castlepic.jpg" id="3_tph4q"]
-[ext_resource type="Texture2D" uid="uid://q78803qroi1m" path="res://resources/coke.jpg" id="4_6gg66"]
+[ext_resource type="Texture2D" uid="uid://qlwuhqn8nlj6" path="res://resources/chardef.jpg" id="3_by8n5"]
+[ext_resource type="Texture2D" uid="uid://bqd8fp82yly4d" path="res://resources/charant.jpg" id="4_bumh6"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -30,7 +30,7 @@ offset_bottom = 116.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 61
-text = "Select your Arena"
+text = "Select player 1"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -61,7 +61,7 @@ offset_left = 579.0
 offset_top = 211.0
 offset_right = 944.68
 offset_bottom = 437.824
-texture_normal = ExtResource("3_tph4q")
+texture_normal = ExtResource("3_by8n5")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -74,7 +74,7 @@ offset_left = 150.0
 offset_top = 213.0
 offset_right = 517.68
 offset_bottom = 434.824
-texture_normal = ExtResource("4_6gg66")
+texture_normal = ExtResource("4_bumh6")
 ignore_texture_size = true
 stretch_mode = 0
 
