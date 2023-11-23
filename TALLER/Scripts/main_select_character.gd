@@ -5,8 +5,8 @@ extends Control
 ### hay hacer dos escenas de selccion para el personaje 1 y para el personaje 2 y guardarlas en el global 
 
 
-var default: String = "res://Scenes/player_1.tscn"
-var ant: String = "res://Scenes/player_2.tscn"
+var ant: String = "res://Scenes/player_1.tscn"
+var honguito: String = "res://Scenes/player_3.tscn"
 
 
 func _ready() -> void:
@@ -24,5 +24,5 @@ func _on_antb_pressed():
 
 
 func _on_defaultb_pressed():
-	global.character1 = default
+	global.character1 = honguito
 	go_to_scene()

@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var hud = $CanvasLayer/hud
 
 var speed = 300
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = 1500
 var jump_speed = -750
 var brazos_count = 4
 var index = 1 : 
@@ -37,11 +37,11 @@ var jumps = {
 }
 
 var runs = {
-	4: "jump 1",
-	3: "jump 2",
-	2: "jump 3",
-	1: "jump 4",
-	0: "jump 5"
+	4: "run 1",
+	3: "run 2",
+	2: "run 3",
+	1: "run 4",
+	0: "run 5"
 }
 
 
@@ -79,7 +79,7 @@ func _process(delta: float) -> void:
 
 		else:
 			_animated_sprite.stop()
-		#_animated_sprite.flip_h = false (poner si se quiere que siempre mire a la derecha)
+	
 	
 		
 func _physics_process(delta: float) -> void:
@@ -88,9 +88,8 @@ func _physics_process(delta: float) -> void:
 
 	var move_input = Input.get_action_strength(move_right) - Input.get_action_strength(move_left)
 
-	if Input.is_action_just_pressed(input_lanzar) && brazos_count >0:
+	if Input.is_action_just_pressed(input_lanzar) && brazos_count > 0:
 		lanzar()
-		_animated_sprite.play("lanzar")
 		brazos_count -=1
 
 	# Handle Jump.
@@ -108,7 +107,7 @@ func _physics_process(delta: float) -> void:
 	
 # Agregar esta función para controlar el último frame de la animación de salto
 func _on_AnimatedSprite2D_animation_finished():
-	if _animated_sprite.animation == "jump 1" or "jump 2" or "jump 3" or "jump 4" or "jump 5" or "lanzar":
+	if _animated_sprite.animation == "jump 1" or "jump 2" or "jump 3" or "jump 4" or "jump 5":
 		_animated_sprite.frame = _animated_sprite.frame_count - 1
 
 func lanzar():

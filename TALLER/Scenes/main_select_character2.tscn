@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/main_select_character2.gd" id="1_ngbii"]
 [ext_resource type="PackedScene" uid="uid://bhdsouc2va3bo" path="res://Scenes/p_b_seleccion_escene.tscn" id="2_burh8"]
-[ext_resource type="Texture2D" uid="uid://qlwuhqn8nlj6" path="res://resources/chardef.jpg" id="3_vf8u6"]
-[ext_resource type="Texture2D" uid="uid://bqd8fp82yly4d" path="res://resources/charant.jpg" id="4_r0lg5"]
+[ext_resource type="Texture2D" uid="uid://ck50lqopf2v8e" path="res://resources/honguitoperfil.jpg" id="3_rf836"]
+[ext_resource type="Texture2D" uid="uid://bbodcf7qgpumj" path="res://resources/antperfil.jpg" id="4_25w8g"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -61,7 +61,7 @@ offset_left = 579.0
 offset_top = 211.0
 offset_right = 944.68
 offset_bottom = 437.824
-texture_normal = ExtResource("3_vf8u6")
+texture_normal = ExtResource("3_rf836")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -74,7 +74,7 @@ offset_left = 150.0
 offset_top = 213.0
 offset_right = 517.68
 offset_bottom = 434.824
-texture_normal = ExtResource("4_r0lg5")
+texture_normal = ExtResource("4_25w8g")
 ignore_texture_size = true
 stretch_mode = 0
 

@@ -5,3 +5,7 @@
 
 [node name="personaje_1" instance=ExtResource("1_2i70y")]
 script = ExtResource("2_imtgi")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+scale = Vector2(5, 5)
+animation = &"idle 3"
