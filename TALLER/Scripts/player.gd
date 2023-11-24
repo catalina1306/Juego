@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var hud = $CanvasLayer/hud
 @onready var pivot = $pivot
 
-
+# holi
 var speed = 300
 var gravity = 1500
 var jump_speed = -750
