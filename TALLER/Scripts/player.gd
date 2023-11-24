@@ -1,6 +1,8 @@
 class_name Player
 extends CharacterBody2D
 @onready var hud = $CanvasLayer/hud
+@onready var pivot = $pivot
+
 
 var speed = 300
 var gravity = 1500
@@ -45,8 +47,7 @@ var runs = {
 }
 
 
-
-@onready var hombro = $hombro
+@onready var hombro = $pivot/hombro
 @onready var _animated_sprite = $AnimatedSprite2D
 @export var brazo_morado = preload("res://Scenes/brazo_morado.tscn")
 
@@ -70,9 +71,11 @@ func _process(delta: float) -> void:
 	if move_input > 0:
 		_animated_sprite.play(runs[brazos_count])
 		_animated_sprite.flip_h = false
+		pivot.scale.x = -1
 	elif move_input < 0:
 		_animated_sprite.play(runs[brazos_count])
 		_animated_sprite.flip_h = true
+		pivot.scale.x = 1
 	else:
 		if is_on_floor():
 			_animated_sprite.play(idles[brazos_count])
@@ -116,9 +119,9 @@ func lanzar():
 
 	if brazos_count > 0:
 		var extremidad = brazo_morado.instantiate() as RigidBody2D
-		extremidad.add_collision_exception_with(self)
-		add_child(extremidad)
+		#extremidad.add_collision_exception_with(self)
 		extremidad.global_position = hombro.global_position
+		add_child(extremidad)
 		extremidad.apply_central_impulse((Vector2.LEFT if _animated_sprite.flip_h else Vector2.RIGHT)*750)
 
 func take_damage():
