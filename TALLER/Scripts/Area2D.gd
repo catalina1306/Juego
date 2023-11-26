@@ -10,7 +10,7 @@ func _on_body_entered(body: Node2D):
 	if body.has_method("take_damage") and body != get_parent().get_parent():
 		body.take_damage()
 		
-	if body is TileMap : 
+	if body is TileMap or body is RigidBody2D: 
 		on_flor = true 
 	if on_flor and body == get_parent().get_parent():
 		body.brazos_count += 1 

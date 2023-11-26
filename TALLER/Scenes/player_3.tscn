@@ -1,8 +1,7 @@
-[gd_scene load_steps=86 format=3 uid="uid://5ewt5jhb4tci"]
+[gd_scene load_steps=85 format=3 uid="uid://5ewt5jhb4tci"]
 
 [ext_resource type="PackedScene" uid="uid://cwsqp77nq4bv8" path="res://Scenes/player.tscn" id="1_7wmfo"]
 [ext_resource type="Texture2D" uid="uid://eon3o5hyfgew" path="res://hongo p1/Take Hit.png" id="2_duw7r"]
-[ext_resource type="PackedScene" uid="uid://deuc3duijk0a3" path="res://Scenes/brazo_morado.tscn" id="2_wmm24"]
 [ext_resource type="Texture2D" uid="uid://wm1r7p4m2or6" path="res://hongo p1/Idle.png" id="3_omar0"]
 [ext_resource type="Texture2D" uid="uid://c5gucqyckc8xh" path="res://hongo p1/Idle hongo 1er brazo.png" id="4_jjih6"]
 [ext_resource type="Texture2D" uid="uid://46lyvnalt2f" path="res://hongo p1/Idle hongo 2do brazo.png" id="5_d1fm4"]
@@ -571,7 +570,6 @@ animations = [{
 }]
 
 [node name="personaje_1" instance=ExtResource("1_7wmfo")]
-brazo_morado = ExtResource("2_wmm24")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 position = Vector2(-1, -29)
