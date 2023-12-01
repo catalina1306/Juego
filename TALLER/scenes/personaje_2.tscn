@@ -726,7 +726,7 @@ script = SubResource("GDScript_qew2v")
 position = Vector2(6, -32)
 scale = Vector2(-4.12791, 4.11206)
 sprite_frames = SubResource("SpriteFrames_iv2ls")
-animation = &"jump 2"
+animation = &"daño 1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
