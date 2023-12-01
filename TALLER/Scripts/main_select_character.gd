@@ -7,7 +7,7 @@ extends Control
 
 var ant: String = "res://Scenes/player_1.tscn"
 var honguito: String = "res://Scenes/player_3.tscn"
-
+var goblin: String = "res://Scenes/personaje_5.tscn"
 
 func _ready() -> void:
 	back.pressed.connect(_on_return_pressed)
@@ -26,3 +26,8 @@ func _on_antb_pressed():
 func _on_defaultb_pressed():
 	global.character1 = honguito
 	go_to_scene()
+
+
+func _on_goblin_pressed():
+	global.character1 = goblin
+	go_to_scene() 

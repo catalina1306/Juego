@@ -723,9 +723,10 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="personaje_1" instance=ExtResource("1_4rr37")]
+[node name="personaje_2" instance=ExtResource("1_4rr37")]
 
 [node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(7, -50)
 sprite_frames = SubResource("SpriteFrames_eh58m")
 animation = &"jump 1"
 frame_progress = 1.0
