@@ -54,7 +54,7 @@ var daños = {
 
 
 @onready var _animated_sprite = $AnimatedSprite2D
-@export var brazo_morado = preload(\"res://Scenes/brazo_morado.tscn\")
+@export var brazo_morado = preload(\"res://Scenes/cabeza_hongo.tscn\")
 @onready var hombro = $hombro
 @onready var hud = $CanvasLayer/hud
 

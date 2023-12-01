@@ -1,0 +1,118 @@
+[gd_scene load_steps=15 format=3 uid="uid://30ra2o35drsg"]
+
+[ext_resource type="Texture2D" uid="uid://bgtx27jwsb1y8" path="res://hormiga/brazo hormiga .png" id="1_2ljih"]
+[ext_resource type="Script" path="res://Scripts/Area2D.gd" id="2_2affi"]
+
+[sub_resource type="GDScript" id="GDScript_0k7cn"]
+script/source = "extends RigidBody2D
+
+var speed = 1000
+
+
+@onready var _animated_sprite = $AnimatedSprite2D
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	body_entered.connect(_on_body_entered)
+	top_level = true
+
+func _physics_process(delta: float) -> void:
+	pass
+func _on_body_entered(body: Node2D):
+	_animated_sprite.play(\"tirado\")
+	queue_free()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ind2c"]
+atlas = ExtResource("1_2ljih")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_varg4"]
+atlas = ExtResource("1_2ljih")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r00s"]
+atlas = ExtResource("1_2ljih")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypnss"]
+atlas = ExtResource("1_2ljih")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdun0"]
+atlas = ExtResource("1_2ljih")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7rcj"]
+atlas = ExtResource("1_2ljih")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8gna"]
+atlas = ExtResource("1_2ljih")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vk3l"]
+atlas = ExtResource("1_2ljih")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5u3jp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ind2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_varg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0r00s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypnss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdun0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7rcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8gna")
+}],
+"loop": true,
+"name": &"girar",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vk3l")
+}],
+"loop": true,
+"name": &"tirado",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ma7o"]
+size = Vector2(11, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjci7"]
+size = Vector2(60, 29)
+
+[node name="brazo_morado" type="RigidBody2D"]
+script = SubResource("GDScript_0k7cn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_5u3jp")
+animation = &"tirado"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 2)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_8ma7o")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_2affi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, 2.5)
+shape = SubResource("RectangleShape2D_xjci7")
