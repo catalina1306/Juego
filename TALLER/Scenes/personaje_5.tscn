@@ -727,6 +727,7 @@ animations = [{
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 position = Vector2(7, -50)
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_eh58m")
 animation = &"jump 1"
 frame_progress = 1.0

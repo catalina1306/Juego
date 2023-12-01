@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5dbv32fcp5k7"]
+
+[ext_resource type="Script" path="res://global.gd" id="1_t262c"]
+
+[node name="Global" type="Node2D"]
+script = ExtResource("1_t262c")
+
+[node name="menuMusic" type="AudioStreamPlayer" parent="."]
+
+[node name="fightMusic" type="AudioStreamPlayer" parent="."]

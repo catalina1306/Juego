@@ -5,6 +5,7 @@ extends Control
 
 
 func _ready() -> void:
+	global.playMenuMusic()
 	start.pressed.connect(_on_start_pressed)
 	exit.pressed.connect(_on_exit_pressed)
 
