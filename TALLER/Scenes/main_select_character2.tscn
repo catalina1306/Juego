@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://drc60lfapj508"]
+[gd_scene load_steps=6 format=3 uid="uid://drc60lfapj508"]
 
 [ext_resource type="Script" path="res://Scripts/main_select_character2.gd" id="1_ngbii"]
 [ext_resource type="PackedScene" uid="uid://bhdsouc2va3bo" path="res://Scenes/p_b_seleccion_escene.tscn" id="2_burh8"]
 [ext_resource type="Texture2D" uid="uid://ck50lqopf2v8e" path="res://resources/honguitoperfil.jpg" id="3_rf836"]
 [ext_resource type="Texture2D" uid="uid://bbodcf7qgpumj" path="res://resources/antperfil.jpg" id="4_25w8g"]
+[ext_resource type="Texture2D" uid="uid://covrofpychbg5" path="res://resources/goblinp.jpg" id="5_m052p"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -29,7 +30,11 @@ offset_right = 279.0
 offset_bottom = 116.0
 grow_horizontal = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 61
+theme_override_colors/font_color = Color(0.247059, 0.596078, 0.8, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_outline_size = 7
+theme_override_font_sizes/font_size = 90
 text = "Select player 2"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
@@ -57,10 +62,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.035
 anchor_bottom = 0.062
-offset_left = 579.0
-offset_top = 211.0
-offset_right = 944.68
-offset_bottom = 437.824
+offset_left = 472.0
+offset_top = 193.0
+offset_right = 702.68
+offset_bottom = 385.824
 texture_normal = ExtResource("3_rf836")
 ignore_texture_size = true
 stretch_mode = 0
@@ -70,13 +75,31 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.035
 anchor_bottom = 0.062
-offset_left = 150.0
-offset_top = 213.0
-offset_right = 517.68
-offset_bottom = 434.824
+offset_left = 164.0
+offset_top = 193.0
+offset_right = 390.68
+offset_bottom = 385.824
 texture_normal = ExtResource("4_25w8g")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="goblin" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 203.0
+offset_top = -130.0
+offset_right = 466.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_m052p")
 ignore_texture_size = true
 stretch_mode = 0
 
 [connection signal="pressed" from="defaultb" to="." method="_on_defaultb_pressed"]
 [connection signal="pressed" from="antb" to="." method="_on_antb_pressed"]
+[connection signal="pressed" from="goblin" to="." method="_on_goblin_pressed"]
