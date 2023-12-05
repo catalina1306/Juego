@@ -2147,6 +2147,7 @@ sources/7 = SubResource("TileSetAtlasSource_81jeq")
 script = ExtResource("1_0wjym")
 camera_max_zoom = 1.2
 camera_min_zoom = 0.6
+scene = "res://Scenes/castle2.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(5, 5)

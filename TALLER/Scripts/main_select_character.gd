@@ -7,7 +7,7 @@ extends Control
 
 var ant: String = "res://Scenes/player_1.tscn"
 var honguito: String = "res://Scenes/player_3.tscn"
-var goblin: String = "res://Scenes/personaje_5.tscn"
+var goblin: String = "res://Scenes/player_4.tscn"
 
 func _ready() -> void:
 	back.pressed.connect(_on_return_pressed)
