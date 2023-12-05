@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=3 uid="uid://c1b74tacnbdvd"]
+[gd_scene load_steps=139 format=3 uid="uid://d0ycv6ym6pes"]
 
 [ext_resource type="Texture2D" uid="uid://dnmeovablo4it" path="res://resources/players/Player Hurt 48x48.png" id="1_1pfky"]
 [ext_resource type="Texture2D" uid="uid://cuoyin71ir8pv" path="res://hormiga/idle/idle 1.png" id="2_f14td"]
@@ -53,7 +53,7 @@ var runs = {
 
 
 @onready var _animated_sprite = $AnimatedSprite2D
-@export var brazo_morado = preload(\"res://Scenes/brazo_morado.tscn\")
+@export var brazo_morado = preload(\"res://Scenes/brazo_1.tscn\")
 @onready var hombro = $hombro
 @onready var hud = $CanvasLayer/hud
 

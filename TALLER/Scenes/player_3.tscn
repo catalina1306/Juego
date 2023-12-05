@@ -1,7 +1,9 @@
-[gd_scene load_steps=85 format=3 uid="uid://5ewt5jhb4tci"]
+[gd_scene load_steps=87 format=3 uid="uid://5ewt5jhb4tci"]
 
 [ext_resource type="PackedScene" uid="uid://cwsqp77nq4bv8" path="res://Scenes/player.tscn" id="1_7wmfo"]
+[ext_resource type="PackedScene" uid="uid://k0776oyi30h7" path="res://Scenes/brazo_2.tscn" id="2_dbbxs"]
 [ext_resource type="Texture2D" uid="uid://eon3o5hyfgew" path="res://hongo p1/Take Hit.png" id="2_duw7r"]
+[ext_resource type="PackedScene" uid="uid://30ra2o35drsg" path="res://Scenes/cabeza_hongo.tscn" id="3_jwpxf"]
 [ext_resource type="Texture2D" uid="uid://wm1r7p4m2or6" path="res://hongo p1/Idle.png" id="3_omar0"]
 [ext_resource type="Texture2D" uid="uid://c5gucqyckc8xh" path="res://hongo p1/Idle hongo 1er brazo.png" id="4_jjih6"]
 [ext_resource type="Texture2D" uid="uid://46lyvnalt2f" path="res://hongo p1/Idle hongo 2do brazo.png" id="5_d1fm4"]
@@ -570,9 +572,10 @@ animations = [{
 }]
 
 [node name="personaje_2" instance=ExtResource("1_7wmfo")]
+extremidades = Array[PackedScene]([ExtResource("2_dbbxs"), ExtResource("2_dbbxs"), ExtResource("3_jwpxf")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 position = Vector2(-1, -29)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_p75g0")
-animation = &"jump 3"
+animation = &"idle 3"

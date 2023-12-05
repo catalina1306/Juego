@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://ckwymrjkv7s2t"]
+[gd_scene load_steps=87 format=3 uid="uid://cu412l8ecdk5h"]
 
 [ext_resource type="Texture2D" uid="uid://cwtqufdxj2dna" path="res://hongo p1/Attack.png" id="1_cch3c"]
 [ext_resource type="Texture2D" uid="uid://eon3o5hyfgew" path="res://hongo p1/Take Hit.png" id="1_wufbb"]
@@ -24,9 +24,10 @@ var jump_speed = -750
 var brazos_count = 3
 
 var idles = {
-	3: \"idle 1\",
-	2: \"idle 2\",
-	1: \"idle 3\",
+	4: \"idle 1\",
+	3: \"idle 2\",
+	2: \"idle 3\",
+	1: \"idle 4\",
 	0: \"idle 4\"
 }
 
@@ -53,8 +54,9 @@ var daños = {
 }
 
 
+
 @onready var _animated_sprite = $AnimatedSprite2D
-@export var brazo_morado = preload(\"res://Scenes/cabeza_hongo.tscn\")
+@export var brazo_morado = preload(\"res://Scenes/brazo_2.tscn\")
 @onready var hombro = $hombro
 @onready var hud = $CanvasLayer/hud
 
@@ -726,7 +728,7 @@ script = SubResource("GDScript_qew2v")
 position = Vector2(6, -32)
 scale = Vector2(-4.12791, 4.11206)
 sprite_frames = SubResource("SpriteFrames_iv2ls")
-animation = &"daño 1"
+animation = &"idle 4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
