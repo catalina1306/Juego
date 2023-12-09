@@ -128,6 +128,9 @@ func lanzar():
 	add_child(extremidad)
 	extremidad.apply_central_impulse((Vector2.LEFT if _animated_sprite.flip_h else Vector2.RIGHT)*750)
 	extremidades_index +=1
+	var tween=create_tween()
+	tween.tween_property(_animated_sprite, "modulate", Color(1, 0, 0), 0.2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	tween.tween_property(_animated_sprite, "modulate", Color(1, 1, 1), 0.2).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 	
 
 func take_damage(damage):
@@ -136,6 +139,7 @@ func take_damage(damage):
 		var tween=create_tween()
 		tween.tween_property(_animated_sprite, "skew", PI/3 *pivot.scale.x , 0.2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 		tween.tween_property(_animated_sprite, "skew", 0, 0.2).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+		
 
 func game_over():
 	mostrar_game_over_scene()
