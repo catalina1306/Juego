@@ -8,4 +8,5 @@ extremidades = Array[PackedScene]([ExtResource("2_rj8gx"), ExtResource("2_rj8gx"
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 scale = Vector2(5, 5)
-animation = &"idle 1"
+animation = &"run 6"
+frame_progress = 0.444024
