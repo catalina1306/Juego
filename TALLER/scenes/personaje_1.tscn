@@ -1052,7 +1052,6 @@ height = 160.0
 
 [node name="personaje_1" type="CharacterBody2D"]
 script = SubResource("GDScript_4p4kc")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(5, 5)
