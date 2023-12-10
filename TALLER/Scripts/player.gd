@@ -7,7 +7,7 @@ var nb = 1
 # holi
 var speed = 300
 var gravity = 1500
-var jump_speed = -750
+var jump_speed = -875
 var extremidades_index = 0
 var index = 1 :
 	set(value) : 
