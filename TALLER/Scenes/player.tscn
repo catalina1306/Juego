@@ -1,6 +1,6 @@
 [gd_scene load_steps=139 format=3 uid="uid://cwsqp77nq4bv8"]
 
-[ext_resource type="Texture2D" uid="uid://dnmeovablo4it" path="res://resources/players/Player Hurt 48x48.png" id="1_mjw5d"]
+[ext_resource type="Texture2D" uid="uid://dnmeovablo4it" path="res://resources/layers/players/Player Hurt 48x48.png" id="1_mjw5d"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_wxcm5"]
 [ext_resource type="Texture2D" uid="uid://cuoyin71ir8pv" path="res://hormiga/idle/idle 1.png" id="2_bk358"]
 [ext_resource type="Texture2D" uid="uid://besjklwr66ty7" path="res://hormiga/idle/idle 2.png" id="3_hmrjm"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b48c8d6g0dvvi" path="res://hormiga/jump/jump 3.png" id="9_4q24o"]
 [ext_resource type="Texture2D" uid="uid://brjdaabj1xk8y" path="res://hormiga/jump/jump 4.png" id="10_gr6y0"]
 [ext_resource type="Texture2D" uid="uid://iw1nwybj37x7" path="res://hormiga/jump/jump 5.png" id="11_h1468"]
-[ext_resource type="Texture2D" uid="uid://0v3lhj57jr38" path="res://resources/players/lanzamientobrazo.png" id="12_dlpay"]
+[ext_resource type="Texture2D" uid="uid://0v3lhj57jr38" path="res://resources/layers/players/lanzamientobrazo.png" id="12_dlpay"]
 [ext_resource type="Texture2D" uid="uid://c55qremupkb72" path="res://hormiga/run/run 1.png" id="13_62ewo"]
 [ext_resource type="Texture2D" uid="uid://bp5q0aekkpfp8" path="res://hormiga/run/run 2.png" id="14_we8dm"]
 [ext_resource type="Texture2D" uid="uid://lr2fn4ho7h66" path="res://hormiga/run/run 3.png" id="15_16moe"]
