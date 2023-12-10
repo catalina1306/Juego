@@ -140,7 +140,7 @@ sources/0 = SubResource("TileSetAtlasSource_0yr17")
 script = ExtResource("1_evsqt")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(669.5, 335)
+position = Vector2(666, 326)
 scale = Vector2(3.5026, 2.31944)
 texture = ExtResource("1_habcv")
 
@@ -156,7 +156,7 @@ layer_0/tile_data = PackedInt32Array(2490368, 1310720, 8, 2555904, 1310720, 9, 2
 [node name="players" type="Node" parent="."]
 
 [node name="pos1" type="Marker2D" parent="."]
-position = Vector2(231, 544)
+position = Vector2(236, 465)
 
 [node name="pos2" type="Marker2D" parent="."]
-position = Vector2(839, 550)
+position = Vector2(895, 480)
