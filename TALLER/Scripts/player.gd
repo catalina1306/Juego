@@ -25,6 +25,7 @@ var move_up
 var input_lanzar
 
 var idles = {
+	5: "idle 6",
 	4: "idle 5",
 	3: "idle 4",
 	2: "idle 3",
@@ -33,6 +34,7 @@ var idles = {
 }
 
 var jumps = {
+	5: "jump 6",
 	4: "jump 5",
 	3: "jump 4",
 	2: "jump 3",
@@ -41,6 +43,7 @@ var jumps = {
 }
 
 var runs = {
+	5: "run 6",
 	4: "run 5",
 	3: "run 4",
 	2: "run 3",
