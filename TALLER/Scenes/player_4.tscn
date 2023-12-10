@@ -764,3 +764,6 @@ animation = &"jump 5"
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 1)
+
+[node name="hombro" parent="pivot" index="0"]
+position = Vector2(-116, -19)

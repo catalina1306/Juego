@@ -29,6 +29,9 @@ offset_right = 279.0
 offset_bottom = 116.0
 grow_horizontal = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.247059, 0.596078, 0.8, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_outline_size = 7
 theme_override_font_sizes/font_size = 61
 text = "Select your Arena"
 
@@ -37,10 +40,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -11.0
-offset_top = -61.0
-offset_right = 213.0
-offset_bottom = -5.0
+offset_left = 30.0
+offset_top = -98.0
+offset_right = 254.0
+offset_bottom = -42.0
 grow_vertical = 0
 metadata/_edit_group_ = true
 

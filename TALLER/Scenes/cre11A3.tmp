@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvjm34fm1pmjf"]
+
+[ext_resource type="PackedScene" uid="uid://dd45508vobh7s" path="res://Scenes/parallax_background.tscn" id="1_ufjv1"]
+[ext_resource type="Script" path="res://Scenes/Label.gd" id="2_7a2hi"]
+[ext_resource type="Script" path="res://Scenes/VBoxContainer.gd" id="2_hnbse"]
+
+[node name="Credits" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 165.0
+offset_bottom = 84.0
+scale = Vector2(7, 7)
+text = "QUARTER EXTREMETIES FIGHT"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("2_7a2hi")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_ufjv1")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_top = 650.0
+offset_right = 230.0
+offset_bottom = 709.0
+scale = Vector2(5, 5)
+alignment = 1
+script = ExtResource("2_hnbse")
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "HOLA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label9" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label10" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label11" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label12" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label13" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label14" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label15" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label16" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label17" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label18" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label19" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label20" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label21" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label22" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label23" type="Label" parent="VBoxContainer"]
+layout_mode = 2
