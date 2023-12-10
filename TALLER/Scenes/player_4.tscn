@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cwsqp77nq4bv8" path="res://Scenes/player.tscn" id="1_t1o3r"]
 [ext_resource type="PackedScene" uid="uid://dem5fkx1ue4dm" path="res://Scenes/brazo_3.tscn" id="2_1hcht"]
-[ext_resource type="Texture2D" uid="uid://dnmeovablo4it" path="res://resources/players/Player Hurt 48x48.png" id="2_bakaa"]
+[ext_resource type="Texture2D" uid="uid://dnmeovablo4it" path="res://resources/layers/players/Player Hurt 48x48.png" id="2_bakaa"]
 [ext_resource type="Texture2D" uid="uid://gknhcep7lnqk" path="res://duendecito/Idle.png" id="3_gbfag"]
 [ext_resource type="PackedScene" uid="uid://c5k07ae7mf3f0" path="res://Scenes/oreja.tscn" id="3_sxdda"]
 [ext_resource type="Texture2D" uid="uid://dblnsep8snq2w" path="res://duendecito/Idle 1.png" id="4_4jvmp"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://0u78ggb3lxyy" path="res://duendecito/jump 3 (1).png" id="10_vwko5"]
 [ext_resource type="Texture2D" uid="uid://ccksjnaq27kck" path="res://duendecito/jump 4.png" id="11_pn3a1"]
 [ext_resource type="Texture2D" uid="uid://dmxo2y07dqb3c" path="res://duendecito/jump 5.png" id="12_05djc"]
-[ext_resource type="Texture2D" uid="uid://0v3lhj57jr38" path="res://resources/players/lanzamientobrazo.png" id="13_0py14"]
+[ext_resource type="Texture2D" uid="uid://0v3lhj57jr38" path="res://resources/layers/players/lanzamientobrazo.png" id="13_0py14"]
 [ext_resource type="Texture2D" uid="uid://b7561hnpclyn" path="res://duendecito/Run.png" id="14_wc25i"]
 [ext_resource type="Texture2D" uid="uid://k7glr77c7rep" path="res://duendecito/Run 1 (1).png" id="15_7tkes"]
 [ext_resource type="Texture2D" uid="uid://biwwe17qtkqen" path="res://duendecito/Run 2 (1).png" id="16_ik2qo"]
