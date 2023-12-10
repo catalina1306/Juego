@@ -129,20 +129,16 @@ func lanzar():
 	add_child(extremidad)
 	extremidad.apply_central_impulse((Vector2.LEFT if _animated_sprite.flip_h else Vector2.RIGHT)*750)
 	extremidades_index +=1
-	var tween=create_tween()
-	tween.tween_property(_animated_sprite, "modulate", Color(0, 1, 0), 0.2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
-	tween.tween_property(_animated_sprite, "modulate", Color(1, 1, 1), 0.2).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 	
 
 func take_damage(damage):
-	if health > 0 :
-		health = max(health-10*damage,0)
-		var tween=create_tween()
-		tween.tween_property(_animated_sprite, "skew", PI/3 *pivot.scale.x , 0.2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
-		tween.tween_property(_animated_sprite, "skew", 0, 0.2).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
-		tween.tween_property(_animated_sprite, "modulate", Color(1, 0, 0), 0.2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
-		tween.tween_property(_animated_sprite, "modulate", Color(1, 1, 1), 0.2).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
-		
+	if health > 0:
+		health = max(health - 10 * damage, 0)
+		if health <= 100 * 0.25 :
+			var tween=create_tween()
+			tween.tween_property(_animated_sprite, "modulate", Color(1, 0, 0), 0.4).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+			tween.parallel().tween_property(_animated_sprite, "scale", Vector2(2.8, 2.8), 1).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+			
 
 func game_over():
 	mostrar_game_over_scene()
