@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://c5k07ae7mf3f0"]
+[gd_scene load_steps=16 format=3 uid="uid://c5k07ae7mf3f0"]
 
 [ext_resource type="Texture2D" uid="uid://cbbfclkx4y5kw" path="res://duendecito/oreja 1.png" id="1_2qphr"]
-[ext_resource type="Script" path="res://Scripts/extremidad.gd" id="2_nu1vl"]
 [ext_resource type="Script" path="res://Scripts/Area2D.gd" id="3_a1nrn"]
 
 [sub_resource type="GDScript" id="GDScript_0k7cn"]
@@ -100,23 +99,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ma7o"]
-size = Vector2(11, 5)
+size = Vector2(11.5, 5.3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjci7"]
-size = Vector2(60, 29)
+size = Vector2(75, 36)
 
 [node name="brazo_morado" type="RigidBody2D"]
 script = SubResource("GDScript_0k7cn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(3, 24)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_5u3jp")
 animation = &"tirado"
-script = ExtResource("2_nu1vl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 2)
+position = Vector2(-2.75, -23.25)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_8ma7o")
 
@@ -124,5 +121,5 @@ shape = SubResource("RectangleShape2D_8ma7o")
 script = ExtResource("3_a1nrn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(3, 2.5)
+position = Vector2(-1.5, -23)
 shape = SubResource("RectangleShape2D_xjci7")

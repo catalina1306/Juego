@@ -54,9 +54,9 @@ region = Rect2(900, 0, 150, 150)
 atlas = ExtResource("1_cmcfk")
 region = Rect2(1050, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_din3o"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtxgc"]
 atlas = ExtResource("1_cmcfk")
-region = Rect2(300, 0, 150, 150)
+region = Rect2(363, 72, 33, 18)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5u3jp"]
 animations = [{
@@ -91,7 +91,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_din3o")
+"texture": SubResource("AtlasTexture_gtxgc")
 }],
 "loop": true,
 "name": &"tirado",
@@ -99,22 +99,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ma7o"]
-size = Vector2(11, 5)
+size = Vector2(15, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjci7"]
-size = Vector2(60, 29)
+size = Vector2(92, 51)
 
 [node name="brazo_morado" type="RigidBody2D"]
 script = SubResource("GDScript_0k7cn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-23, -32)
+position = Vector2(-3.8147e-06, 0.999996)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_5u3jp")
 animation = &"tirado"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 2)
+position = Vector2(10.5, 3.5)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_8ma7o")
 
@@ -122,5 +122,5 @@ shape = SubResource("RectangleShape2D_8ma7o")
 script = ExtResource("2_qkfx3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(3, 2.5)
+position = Vector2(10, 3.5)
 shape = SubResource("RectangleShape2D_xjci7")

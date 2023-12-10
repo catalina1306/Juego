@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cger14ic84s1v"]
+[gd_scene load_steps=2 format=3 uid="uid://cfdcurfcgt2ke"]
 
 [sub_resource type="GDScript" id="GDScript_ntkd8"]
 script/source = "extends VBoxContainer
