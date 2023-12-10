@@ -27,5 +27,5 @@ func _on_defaultb_pressed():
 	go_to_scene()
 	
 func _on_goblin_pressed():
-	global.character1 = goblin
+	global.character2 = goblin
 	go_to_scene() 

@@ -9,7 +9,7 @@ var speed = 300
 var gravity = 1500
 var jump_speed = -750
 var extremidades_index = 0
-var index = 1 : 
+var index = 1 :
 	set(value) : 
 		index = value 
 		move_left = "move_left" + str(index)
@@ -18,6 +18,7 @@ var index = 1 :
 		input_lanzar = "lanzar" + str(index)
 		if hud :
 			hud.index = index
+
 var move_left
 var move_right
 var move_up
@@ -65,7 +66,7 @@ var maxHealth = 100
 
 func _ready() -> void:
 	hud.set_health(health)
-
+	
 func _process(delta: float) -> void:
 	if health <= 0:
 		game_over()
@@ -129,7 +130,7 @@ func lanzar():
 	extremidad.apply_central_impulse((Vector2.LEFT if _animated_sprite.flip_h else Vector2.RIGHT)*750)
 	extremidades_index +=1
 	var tween=create_tween()
-	tween.tween_property(_animated_sprite, "modulate", Color(1, 0, 0), 0.2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	tween.tween_property(_animated_sprite, "modulate", Color(0, 1, 0), 0.2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	tween.tween_property(_animated_sprite, "modulate", Color(1, 1, 1), 0.2).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 	
 
@@ -139,6 +140,8 @@ func take_damage(damage):
 		var tween=create_tween()
 		tween.tween_property(_animated_sprite, "skew", PI/3 *pivot.scale.x , 0.2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 		tween.tween_property(_animated_sprite, "skew", 0, 0.2).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+		tween.tween_property(_animated_sprite, "modulate", Color(1, 0, 0), 0.2).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+		tween.tween_property(_animated_sprite, "modulate", Color(1, 1, 1), 0.2).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 		
 
 func game_over():
