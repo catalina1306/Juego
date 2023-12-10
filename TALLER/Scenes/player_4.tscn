@@ -1,9 +1,10 @@
-[gd_scene load_steps=113 format=3 uid="uid://bfmmpy5lasv2k"]
+[gd_scene load_steps=114 format=3 uid="uid://bfmmpy5lasv2k"]
 
 [ext_resource type="PackedScene" uid="uid://cwsqp77nq4bv8" path="res://Scenes/player.tscn" id="1_t1o3r"]
 [ext_resource type="PackedScene" uid="uid://dem5fkx1ue4dm" path="res://Scenes/brazo_3.tscn" id="2_1hcht"]
 [ext_resource type="Texture2D" uid="uid://dnmeovablo4it" path="res://resources/players/Player Hurt 48x48.png" id="2_bakaa"]
 [ext_resource type="Texture2D" uid="uid://gknhcep7lnqk" path="res://duendecito/Idle.png" id="3_gbfag"]
+[ext_resource type="PackedScene" uid="uid://c5k07ae7mf3f0" path="res://Scenes/oreja.tscn" id="3_sxdda"]
 [ext_resource type="Texture2D" uid="uid://dblnsep8snq2w" path="res://duendecito/Idle 1.png" id="4_4jvmp"]
 [ext_resource type="Texture2D" uid="uid://noh5l1fgdvdp" path="res://duendecito/Idle 2.png" id="5_c32pu"]
 [ext_resource type="Texture2D" uid="uid://duhol85yppywq" path="res://duendecito/Idle 3.png" id="6_ap1ni"]
@@ -753,7 +754,7 @@ animations = [{
 }]
 
 [node name="personaje_2" instance=ExtResource("1_t1o3r")]
-extremidades = Array[PackedScene]([ExtResource("2_1hcht"), ExtResource("2_1hcht"), ExtResource("2_1hcht"), ExtResource("2_1hcht")])
+extremidades = Array[PackedScene]([ExtResource("2_1hcht"), ExtResource("2_1hcht"), ExtResource("3_sxdda"), ExtResource("3_sxdda")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 position = Vector2(-4, -27)
