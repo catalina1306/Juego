@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://c5k07ae7mf3f0"]
+[gd_scene load_steps=16 format=3 uid="uid://dydxxdiyp2agd"]
 
-[ext_resource type="Texture2D" uid="uid://cbbfclkx4y5kw" path="res://duendecito/oreja 1.png" id="1_2qphr"]
-[ext_resource type="Script" path="res://Scripts/Area2D.gd" id="3_a1nrn"]
+[ext_resource type="Texture2D" uid="uid://dmq5m5iox7b41" path="res://duendecito/pierna goblin.png" id="1_emmwa"]
+[ext_resource type="Script" path="res://Scripts/Area2D.gd" id="2_tsga4"]
 
 [sub_resource type="GDScript" id="GDScript_0k7cn"]
 script/source = "extends RigidBody2D
@@ -22,68 +22,68 @@ func _on_body_entered(body: Node2D):
 	queue_free()
 "
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ugro1"]
-atlas = ExtResource("1_2qphr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_whwmm"]
+atlas = ExtResource("1_emmwa")
 region = Rect2(0, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmy22"]
-atlas = ExtResource("1_2qphr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq0j3"]
+atlas = ExtResource("1_emmwa")
 region = Rect2(150, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nrc34"]
-atlas = ExtResource("1_2qphr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u6fd"]
+atlas = ExtResource("1_emmwa")
 region = Rect2(300, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6csv3"]
-atlas = ExtResource("1_2qphr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvcwq"]
+atlas = ExtResource("1_emmwa")
 region = Rect2(450, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3s6hx"]
-atlas = ExtResource("1_2qphr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjmnh"]
+atlas = ExtResource("1_emmwa")
 region = Rect2(600, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n562m"]
-atlas = ExtResource("1_2qphr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_pljm3"]
+atlas = ExtResource("1_emmwa")
 region = Rect2(750, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_suwde"]
-atlas = ExtResource("1_2qphr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcrq7"]
+atlas = ExtResource("1_emmwa")
 region = Rect2(900, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5l1bm"]
-atlas = ExtResource("1_2qphr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_e81s7"]
+atlas = ExtResource("1_emmwa")
 region = Rect2(1050, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rf3id"]
-atlas = ExtResource("1_2qphr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f4vb"]
+atlas = ExtResource("1_emmwa")
 region = Rect2(0, 0, 150, 150)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5u3jp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ugro1")
+"texture": SubResource("AtlasTexture_whwmm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mmy22")
+"texture": SubResource("AtlasTexture_eq0j3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nrc34")
+"texture": SubResource("AtlasTexture_7u6fd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6csv3")
+"texture": SubResource("AtlasTexture_jvcwq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3s6hx")
+"texture": SubResource("AtlasTexture_rjmnh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n562m")
+"texture": SubResource("AtlasTexture_pljm3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_suwde")
+"texture": SubResource("AtlasTexture_tcrq7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5l1bm")
+"texture": SubResource("AtlasTexture_e81s7")
 }],
 "loop": false,
 "name": &"girar",
@@ -91,7 +91,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rf3id")
+"texture": SubResource("AtlasTexture_2f4vb")
 }],
 "loop": false,
 "name": &"tirado",
@@ -108,9 +108,10 @@ size = Vector2(75, 36)
 script = SubResource("GDScript_0k7cn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-41, -112)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_5u3jp")
-animation = &"girar"
+animation = &"tirado"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.75, -23.25)
@@ -118,7 +119,7 @@ scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_8ma7o")
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("3_a1nrn")
+script = ExtResource("2_tsga4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1.5, -23)
