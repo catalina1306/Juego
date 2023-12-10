@@ -109,6 +109,7 @@ size = Vector2(60, 29)
 script = SubResource("GDScript_0k7cn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, 24)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_5u3jp")
 animation = &"tirado"

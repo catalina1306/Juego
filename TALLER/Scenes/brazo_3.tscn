@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://dem5fkx1ue4dm"]
 
-[ext_resource type="Texture2D" uid="uid://cnpi7uv5jg8a6" path="res://duendecito/brazo duende.png" id="1_cmcfk"]
+[ext_resource type="Texture2D" uid="uid://bvrsbw6m8xtnl" path="res://duendecito/brazo duende.png" id="1_cmcfk"]
 [ext_resource type="Script" path="res://Scripts/extremidad.gd" id="2_2ux2v"]
 [ext_resource type="Script" path="res://Scripts/Area2D.gd" id="2_qkfx3"]
 
@@ -109,6 +109,7 @@ size = Vector2(60, 29)
 script = SubResource("GDScript_0k7cn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-23, -32)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_5u3jp")
 animation = &"tirado"

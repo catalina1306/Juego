@@ -90,6 +90,7 @@ size = Vector2(60, 29)
 script = ExtResource("1_7p7px")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(26, -35)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_5u3jp")
 animation = &"girar"
