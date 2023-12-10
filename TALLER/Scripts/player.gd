@@ -55,6 +55,7 @@ var runs = {
 @onready var hombro = $pivot/hombro
 @onready var _animated_sprite = $AnimatedSprite2D
 @export var extremidades: Array[PackedScene]
+@onready var personaje_1 = $"."
 
 
 
@@ -137,13 +138,20 @@ func lanzar():
 func take_damage(damage):
 	if health > 0:
 		health = max(health - 10 * damage, 0)
+		if health <= 100 * 0.5 :
+			var tween=create_tween()
+			tween.tween_property(_animated_sprite, "modulate", Color(1, 1, 0), 0.4).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+			tween.parallel().tween_property(personaje_1, "scale", Vector2(0.75, 0.75), 1).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+			speed = 350
+		
 		if health <= 100 * 0.25 :
 			var tween=create_tween()
-			_animated_sprite.offset.x = 0
-			_animated_sprite.offset.y = 0
 			tween.tween_property(_animated_sprite, "modulate", Color(1, 0, 0), 0.4).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
-			tween.parallel().tween_property(_animated_sprite, "scale", Vector2(2.8, 2.8), 1).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
-			tween.parallel().tween_property(_animated_sprite, "offset", Vector2(0.1, -2), 1).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+			tween.parallel().tween_property(personaje_1, "scale", Vector2(0.5, 0.5), 1).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+			speed = 400
+			
+	
+
 
 func game_over():
 	mostrar_game_over_scene()
