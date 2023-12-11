@@ -108,10 +108,10 @@ size = Vector2(92, 51)
 script = SubResource("GDScript_0k7cn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-3.8147e-06, 0.999996)
+position = Vector2(53, -19)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_5u3jp")
-animation = &"tirado"
+animation = &"girar"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(10.5, 3.5)

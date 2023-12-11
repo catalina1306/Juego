@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dfd7dc1j7of30" path="res://Scenes/brazo_1.tscn" id="2_rj8gx"]
 
 [node name="personaje_1" instance=ExtResource("1_2i70y")]
-extremidades = Array[PackedScene]([ExtResource("2_rj8gx"), ExtResource("2_rj8gx"), ExtResource("2_rj8gx"), ExtResource("2_rj8gx")])
+extremidades = Array[PackedScene]([ExtResource("2_rj8gx"), ExtResource("2_rj8gx"), ExtResource("2_rj8gx"), ExtResource("2_rj8gx"), ExtResource("2_rj8gx")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 scale = Vector2(5, 5)
