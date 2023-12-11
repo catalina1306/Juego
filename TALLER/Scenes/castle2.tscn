@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dw2ro1y4xuvox"]
+[gd_scene load_steps=12 format=3 uid="uid://dw2ro1y4xuvox"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_0wjym"]
 [ext_resource type="Texture2D" uid="uid://j2hn7uvyh0dn" path="res://resources/layers/background.png" id="2_ciy8u"]
 [ext_resource type="Texture2D" uid="uid://cimjidp6llfjc" path="res://resources/layers/middleground.png" id="2_kkef2"]
 [ext_resource type="Texture2D" uid="uid://bqp5yrshoyxp7" path="res://resources/layers/tileset.png" id="4_5cqcs"]
+[ext_resource type="PackedScene" uid="uid://cjj0uq87riui5" path="res://Scenes/pause.tscn" id="5_37hin"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fftx2"]
 texture = ExtResource("2_ciy8u")
@@ -2186,3 +2187,8 @@ position = Vector2(689, 183)
 
 [node name="pos2" type="Marker2D" parent="."]
 position = Vector2(2007, 193)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="VBoxContainer" parent="CanvasLayer" instance=ExtResource("5_37hin")]
