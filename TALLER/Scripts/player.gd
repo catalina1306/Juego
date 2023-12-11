@@ -185,3 +185,5 @@ func game_over():
 	mostrar_game_over_scene()
 func mostrar_game_over_scene():
 	get_tree().change_scene_to_file("res://Scenes/GameOverMenu.tscn")
+	
+	#Hola
