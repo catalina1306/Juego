@@ -562,7 +562,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="personaje_1" instance=ExtResource("1_2fm6x")]
+[node name="personaje_2" instance=ExtResource("1_2fm6x")]
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_hun1y")

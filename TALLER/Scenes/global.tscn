@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://du81i3ltn1tdr"]
+[gd_scene load_steps=3 format=3 uid="uid://du81i3ltn1tdr"]
 
 [ext_resource type="Script" path="res://global.gd" id="1_t262c"]
+[ext_resource type="AudioStream" uid="uid://c20vy3o7ft3h4" path="res://resources/musicamenu.mp3" id="2_k8d2p"]
 
 [node name="Global" type="Node2D"]
 script = ExtResource("1_t262c")
 
 [node name="menuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_k8d2p")
 
 [node name="fightMusic" type="AudioStreamPlayer" parent="."]

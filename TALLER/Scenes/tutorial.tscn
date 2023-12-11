@@ -1016,58 +1016,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_ul7um"]
-resource_name = "dialogo1"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-11, 504), Vector2(1000, 504)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"run 1", &"idle 1"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(3),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:texto")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1.1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Bueno, como te venia contando, los portales invadieron este mundo, por lo que tendras que aprender a defenderte si quieres reinar en el mundo de los monstruos"]
-}
-
 [sub_resource type="Animation" id="Animation_cxtfg"]
 length = 0.001
 tracks/0/type = "value"
@@ -1119,6 +1067,58 @@ tracks/3/keys = {
 "values": [""]
 }
 
+[sub_resource type="Animation" id="Animation_ul7um"]
+resource_name = "dialogo1"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-11, 504), Vector2(800, 504)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"run 1", &"idle 1"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:texto")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.1, 4.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Bueno, como te venia contando, los portales invadieron este mundo, por lo que tendras que aprender a defenderte si quieres reinar en el mundo de los monstruos", "Para moverte pulsa teclas A,W,S,D si eres el player 1 si no las teclas UP, DOWN, RIGHT, LEFT. Para dispara tu ataque (extremidades) pulsa E o Ñ respectivamente "]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nisu6"]
 _data = {
 "RESET": SubResource("Animation_cxtfg"),
@@ -1157,7 +1157,18 @@ polygon = PackedVector2Array(1154, 611, 1153, 7, 1345, 0, 1358, 643)
 [node name="players" type="Node" parent="."]
 
 [node name="pos1" type="Marker2D" parent="."]
-position = Vector2(242, 385)
+position = Vector2(67, 484)
+
+[node name="pos2" type="Marker2D" parent="."]
+position = Vector2(305, 478)
+
+[node name="Skip" type="Button" parent="."]
+offset_left = 1027.0
+offset_top = 557.0
+offset_right = 1140.0
+offset_bottom = 605.0
+theme_override_font_sizes/font_size = 60
+text = "Skip"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-11, 504)
@@ -1189,7 +1200,8 @@ offset_right = 180.519
 offset_bottom = 268.401
 grow_horizontal = 2
 grow_vertical = 2
-autowrap_mode = 1
+theme_override_font_sizes/font_size = 30
+autowrap_mode = 2
 
 [node name="Timer" type="Timer" parent="Sprite2D"]
 wait_time = 0.1
