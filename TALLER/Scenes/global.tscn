@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://global.gd" id="1_t262c"]
 [ext_resource type="AudioStream" uid="uid://c20vy3o7ft3h4" path="res://resources/musicamenu.mp3" id="2_k8d2p"]
-[ext_resource type="AudioStream" uid="uid://u45pr2stpkwa" path="res://resources/musicapelea.mp3" id="3_cbj4u"]
+[ext_resource type="AudioStream" uid="uid://b0go5ti1713wl" path="res://resources/musicapelea.mp3" id="3_cbj4u"]
 
 [node name="Global" type="Node2D"]
 script = ExtResource("1_t262c")
