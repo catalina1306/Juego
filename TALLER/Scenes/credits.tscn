@@ -536,7 +536,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 3
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 23
 text = "REAL PIXEL
 
 
@@ -556,6 +556,26 @@ Benjamín Ureta
 Catalina Cepeda
 Francisca López
 Renato Valdés
+
+
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+text = "music
+juego: Patrick de Arteaga
+menú: Monument_Music
+assets
+mapas: ansimuz
+personajes: LuizMelo/Francisca Lopez
+
 
 
 

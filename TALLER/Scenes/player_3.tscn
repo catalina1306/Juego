@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://eon3o5hyfgew" path="res://hongo p1/Take Hit.png" id="2_duw7r"]
 [ext_resource type="PackedScene" uid="uid://30ra2o35drsg" path="res://Scenes/cabeza_hongo.tscn" id="3_jwpxf"]
 [ext_resource type="Texture2D" uid="uid://wm1r7p4m2or6" path="res://hongo p1/Idle.png" id="3_omar0"]
-[ext_resource type="PackedScene" path="res://Scenes/piernahongo.tscn" id="4_d7hg5"]
+[ext_resource type="PackedScene" uid="uid://denob07qc7gk6" path="res://Scenes/piernahongo.tscn" id="4_d7hg5"]
 [ext_resource type="Texture2D" uid="uid://c5gucqyckc8xh" path="res://hongo p1/Idle hongo 1er brazo.png" id="4_jjih6"]
 [ext_resource type="Texture2D" uid="uid://46lyvnalt2f" path="res://hongo p1/Idle hongo 2do brazo.png" id="5_d1fm4"]
 [ext_resource type="Texture2D" uid="uid://garts4okf8g5" path="res://hongo p1/Idle hongo cabeza.png" id="6_y4d42"]
