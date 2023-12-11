@@ -1080,7 +1080,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-11, 504), Vector2(800, 504)]
+"values": [Vector2(-11, 504), Vector2(1000, 504)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1113,10 +1113,10 @@ tracks/3/path = NodePath("Sprite2D:texto")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1.1, 4.1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(1.1),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Bueno, como te venia contando, los portales invadieron este mundo, por lo que tendras que aprender a defenderte si quieres reinar en el mundo de los monstruos", "Para moverte pulsa teclas A,W,S,D si eres el player 1 si no las teclas UP, DOWN, RIGHT, LEFT. Para dispara tu ataque (extremidades) pulsa E o Ñ respectivamente "]
+"values": ["Bueno, como te venia contando, los portales invadieron este mundo, por lo que tendras que aprender a defenderte si quieres reinar en el mundo de los monstruos"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nisu6"]
@@ -1178,10 +1178,10 @@ animation = &"run 1"
 autoplay = "idle 1"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "dialogo1"
 libraries = {
 "": SubResource("AnimationLibrary_nisu6")
 }
-autoplay = "dialogo1"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576.438, 141)

@@ -23,6 +23,7 @@ var move_left
 var move_right
 var move_up
 var input_lanzar
+var escala = 1
 
 var idles = {
 	5: "idle 6",
@@ -59,7 +60,6 @@ var runs = {
 
 
 
-
 var health = 100:
 	set(value):
 		health = value
@@ -72,6 +72,22 @@ func _ready() -> void:
 	hud.set_health(health)
 	
 func _process(delta: float) -> void:
+	if extremidades_index == 5:
+		if health <= 50 and health > 25:
+			speed = 200
+		if health <= 25:
+			speed = 300
+		if health > 50:
+			speed = 150
+	if extremidades_index < 5:
+		if health <= 25:
+			speed = 600
+		if health <= 50 and health > 25:
+			speed = 500
+		if health > 50:
+			speed = 300
+	
+		
 	if health <= 0:
 		game_over()
 		
@@ -123,37 +139,51 @@ func _on_AnimatedSprite2D_animation_finished():
 		_animated_sprite.frame = _animated_sprite.frame_count - 1
 
 func lanzar():
-	var extremidad=extremidades[extremidades_index].instantiate()
-	if not extremidad:
-		return
+	if extremidades[extremidades_index] != null:
+		var extremidad = extremidades[extremidades_index].instantiate()
+	
+		if not extremidad:
+			return
 
+		if health <= 100 * 0.5:
+			extremidad.modulate = Color(1, 1, 0)  # Cambia el color instantáneamente
+			var animated_sprite = extremidad.get_node("AnimatedSprite2D")  # Ajusta según la estructura de tu nodo extremidad
+			if animated_sprite:
+				animated_sprite.scale = Vector2(3.75,3.75)
+			extremidad.scale = Vector2(0.75,0.75)
+			
+		if health <= 100 * 0.25:
+			extremidad.modulate = Color(1, 0, 0)  # Cambia el color instantáneamente
+			var animated_sprite = extremidad.get_node("AnimatedSprite2D")  # Ajusta según la estructura de tu nodo extremidad
+			if animated_sprite:
+				animated_sprite.scale = Vector2(2.5,2.5)
+			extremidad.scale = Vector2(0.5,0.5)
 
-	#extremidad.add_collision_exception_with(self)
-	extremidad.global_position = hombro.global_position
-	add_child(extremidad)
-	extremidad.apply_central_impulse((Vector2.LEFT if _animated_sprite.flip_h else Vector2.RIGHT)*750)
-	extremidades_index +=1
+		extremidad.global_position = hombro.global_position
+		add_child(extremidad)
+		extremidad.apply_central_impulse((Vector2.LEFT if _animated_sprite.flip_h else Vector2.RIGHT) * 750)
+		extremidades_index += 1
 	
 
 func take_damage(damage):
+	var extremidad = extremidades[extremidades_index].instantiate()
 	if health > 0:
 		health = max(health - 10 * damage, 0)
 		if health <= 100 * 0.5 :
 			var tween=create_tween()
-			tween.tween_property(_animated_sprite, "modulate", Color(1, 1, 0), 0.4).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
-			tween.parallel().tween_property(personaje_1, "scale", Vector2(0.75, 0.75), 1).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
-			speed = 350
+			tween.tween_property(_animated_sprite, "modulate", Color(1, 1, 0), 0.4)
+			tween.parallel().tween_property(personaje_1, "scale", Vector2(0.75, 0.75), 0.75)
+			speed = 500
 		
 		if health <= 100 * 0.25 :
 			var tween=create_tween()
-			tween.tween_property(_animated_sprite, "modulate", Color(1, 0, 0), 0.4).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
-			tween.parallel().tween_property(personaje_1, "scale", Vector2(0.5, 0.5), 1).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
-			speed = 400
-			
-	
-
+			tween.tween_property(_animated_sprite, "modulate", Color(1, 0, 0), 0.4)
+			tween.parallel().tween_property(personaje_1, "scale", Vector2(0.5, 0.5), 0.75)
+			speed = 600
 
 func game_over():
 	mostrar_game_over_scene()
 func mostrar_game_over_scene():
 	get_tree().change_scene_to_file("res://Scenes/GameOverMenu.tscn")
+	
+	#Hola
