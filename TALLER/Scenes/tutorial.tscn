@@ -1069,7 +1069,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_ul7um"]
 resource_name = "dialogo1"
-length = 5.0
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1113,10 +1113,22 @@ tracks/3/path = NodePath("Sprite2D:texto")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1.1),
+"times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Bueno, como te venia contando, los portales invadieron este mundo, por lo que tendras que aprender a defenderte si quieres reinar en el mundo de los monstruos"]
+"values": ["Bueno, como les venia contando, los portales invadieron este mundo, por lo que tendran que aprender a defenderse si quieren reinar en el mundo de los monstruos. Para mover a los jugadores 1 y 2 deberan pulsar las teclas AWSD y UP DOWN LEFT RIGTH reespectivamente y para lanzar su ataque E y Ñ "]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:texto")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nisu6"]
@@ -1162,14 +1174,6 @@ position = Vector2(67, 484)
 [node name="pos2" type="Marker2D" parent="."]
 position = Vector2(305, 478)
 
-[node name="Skip" type="Button" parent="."]
-offset_left = 1027.0
-offset_top = 557.0
-offset_right = 1140.0
-offset_bottom = 605.0
-theme_override_font_sizes/font_size = 60
-text = "Skip"
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-11, 504)
 scale = Vector2(4.30667, 4.37333)
@@ -1178,32 +1182,32 @@ animation = &"run 1"
 autoplay = "idle 1"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "dialogo1"
 libraries = {
 "": SubResource("AnimationLibrary_nisu6")
 }
+autoplay = "dialogo1"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576.438, 141)
-scale = Vector2(3.10276, 0.417647)
+[node name="Sprite2D" type="CanvasLayer" parent="."]
 script = ExtResource("25_3hayn")
 
 [node name="Label" type="Label" parent="Sprite2D"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -180.481
-offset_top = -213.599
-offset_right = 180.519
-offset_bottom = 268.401
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 43.0
+offset_bottom = 237.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 autowrap_mode = 2
 
 [node name="Timer" type="Timer" parent="Sprite2D"]
-wait_time = 0.1
+wait_time = 0.034
+
+[node name="Skip" type="Button" parent="Sprite2D"]
+offset_left = 1027.0
+offset_top = 557.0
+offset_right = 1140.0
+offset_bottom = 605.0
+theme_override_font_sizes/font_size = 90
+text = "Skip"
 
 [connection signal="timeout" from="Sprite2D/Timer" to="Sprite2D" method="_on_timer_timeout"]

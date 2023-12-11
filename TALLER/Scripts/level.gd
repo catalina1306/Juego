@@ -14,6 +14,7 @@ extends Node2D
 @export var scene: String
 
 func _ready():
+
 	global.playFightMusic()
 	personaje1.global_position = pos_1.global_position
 	personaje2.global_position = pos_2.global_position

@@ -1,4 +1,4 @@
-extends Sprite2D
+extends CanvasLayer
 
 @export var texto: String = "":
 	set(value):

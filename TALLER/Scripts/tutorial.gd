@@ -7,7 +7,8 @@ extends Node2D
 @onready var pos_1 = $pos1
 @onready var pos_2 = $pos2
 @export var scene: String
-@onready var skip = $Skip
+@onready var skip = $Sprite2D/Skip
+
 
 
 func _ready():
