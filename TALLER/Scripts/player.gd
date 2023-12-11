@@ -110,8 +110,7 @@ func _process(delta: float) -> void:
 
 		else:
 			_animated_sprite.stop()
-	
-	
+
 		
 func _physics_process(delta: float) -> void:
 	if !is_on_floor():
@@ -193,5 +192,3 @@ func game_over2():
 	mostrar_game_over_scene2()
 func mostrar_game_over_scene2():
 	get_tree().change_scene_to_file("res://Scenes/GameOverMenu3.tscn")
-	
-	#Hola

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://2ocnpirqlcow"]
+[gd_scene load_steps=20 format=3 uid="uid://2ocnpirqlcow"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_sfk1h"]
 [ext_resource type="Texture2D" uid="uid://bj50tphlmwvx0" path="res://resources/layers/Sky-layer.png" id="2_wglfe"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ie5583b03usc" path="res://resources/2 Background/Day/2.png" id="4_r4hfv"]
 [ext_resource type="Texture2D" uid="uid://dqjciokngbog7" path="res://resources/2 Background/Day/3.png" id="5_mbmxr"]
 [ext_resource type="Texture2D" uid="uid://0q7yt41q7wg" path="res://resources/2 Background/Day/4.png" id="6_knyxd"]
+[ext_resource type="PackedScene" uid="uid://cjj0uq87riui5" path="res://Scenes/pause.tscn" id="8_b5fvu"]
 [ext_resource type="Texture2D" uid="uid://cffp37y7vkxt2" path="res://resources/1 Tiles/Tileset.png" id="9_nmn1f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_37ry7"]
@@ -2042,3 +2043,8 @@ position = Vector2(2007, 216)
 
 [node name="pos1" type="Marker2D" parent="."]
 position = Vector2(689, 183)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="VBoxContainer" parent="CanvasLayer" instance=ExtResource("8_b5fvu")]
