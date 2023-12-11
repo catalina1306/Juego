@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://gknhcep7lnqk" path="res://duendecito/Idle.png" id="3_gbfag"]
 [ext_resource type="PackedScene" uid="uid://c5k07ae7mf3f0" path="res://Scenes/oreja.tscn" id="3_sxdda"]
 [ext_resource type="Texture2D" uid="uid://dblnsep8snq2w" path="res://duendecito/Idle 1.png" id="4_4jvmp"]
-[ext_resource type="PackedScene" path="res://Scenes/piernagoblin.tscn" id="4_eb18w"]
+[ext_resource type="PackedScene" uid="uid://dydxxdiyp2agd" path="res://Scenes/piernagoblin.tscn" id="4_eb18w"]
 [ext_resource type="Texture2D" uid="uid://noh5l1fgdvdp" path="res://duendecito/Idle 2.png" id="5_c32pu"]
 [ext_resource type="Texture2D" uid="uid://duhol85yppywq" path="res://duendecito/Idle 3.png" id="6_ap1ni"]
 [ext_resource type="Texture2D" uid="uid://ynb5vphgrh6j" path="res://duendecito/Idle 4.png" id="7_ky7fx"]
