@@ -89,7 +89,10 @@ func _process(delta: float) -> void:
 	
 		
 	if health <= 0:
-		game_over()
+		if index == 1:
+			game_over()
+		if index == 2:
+			game_over2()
 		
 	var move_input = Input.get_action_strength(move_right) - Input.get_action_strength(move_left)
 
@@ -184,6 +187,11 @@ func take_damage(damage):
 func game_over():
 	mostrar_game_over_scene()
 func mostrar_game_over_scene():
-	get_tree().change_scene_to_file("res://Scenes/GameOverMenu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/GameOverMenu2.tscn")
+
+func game_over2():
+	mostrar_game_over_scene2()
+func mostrar_game_over_scene2():
+	get_tree().change_scene_to_file("res://Scenes/GameOverMenu3.tscn")
 	
 	#Hola
