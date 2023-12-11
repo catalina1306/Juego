@@ -890,7 +890,7 @@ extremidades = Array[PackedScene]([ExtResource("2_1hcht"), ExtResource("2_1hcht"
 position = Vector2(-4, -27)
 scale = Vector2(4.30667, 4.37333)
 sprite_frames = SubResource("SpriteFrames_eh58m")
-animation = &"idle 6"
+animation = &"idle 1"
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 1)

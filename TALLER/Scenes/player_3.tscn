@@ -728,4 +728,4 @@ extremidades = Array[PackedScene]([ExtResource("2_dbbxs"), ExtResource("2_dbbxs"
 position = Vector2(-1, -29)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_p75g0")
-animation = &"jump 2"
+animation = &"idle 1"

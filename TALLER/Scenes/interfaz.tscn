@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbyi3dm55u7oy"]
+
+[ext_resource type="Script" path="res://Scenes/interfaz.gd" id="1_13o8w"]
+[ext_resource type="Texture2D" uid="uid://3x15uc51rvf8" path="res://FONDO CAFE.jpg" id="2_2fmhw"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_13o8w")
+
+[node name="frame" type="NinePatchRect" parent="."]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_2fmhw")
